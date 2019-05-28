@@ -1,0 +1,97 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+server:
+    port: 8083
+    
+logging:
+    level:
+        #ROOT: DEBUG
+        vn.tcx.framework: INFO
+        vn.tcx.eoffice.hosocongviec: INFO
+        #com.zaxxer.hikari: DEBUG
+        #org.hibernate.dialect: DEBUG
+    
+spring:
+    profiles:
+        active: local
+        #include:
+        #    - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+    jackson:
+        serialization:
+            indent-output: true
+    liquibase:
+        enabled: false
+        change-log: classpath:/migrations/master.xml
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:oracle:thin:@192.168.1.218:1539:xe
+        username: hosocongviec_buu
+        password: abcd1234
+        hikari:
+            poolName: hosocongviec-pool
+            maximum-pool-size: 2
+            connection-test-query: SELECT 1 FROM DUAL
+            connection-timeout: 60000
+            auto-commit: false
+            
+    jpa:
+        hibernate:
+            ddl-auto: none
+        #database-platform: org.hibernate.dialect.Oracle12cDialect
+        # database: ORACLE
+        show-sql: true
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            #hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
+            #hibernate.cache.hazelcast.instance_name: common
+            #hibernate.cache.use_minimal_puts: true
+            #hibernate.cache.hazelcast.use_lite_member: true
+    #data:
+    #    jest:
+    #        uri: http://localhost:9200
+    elasticsearch:
+      rest:
+        uris:
+        - https://es.eoffice.greenglobal.vn
+        username: elastic
+        password: changeme
+
+    kafka:
+        bootstrap-servers: 192.168.1.210:30011
+        producer:
+          client-id: hosocongviec_service
+        consumer:
+          client-id: hosocongviec_service
+          group-id: hosocongviec_group
+
+    
+tcx:
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        
+elasticsearch:
+  index:
+    alias: 'qoffice_dev_hosocongviec'
+    type: 'doc'
+    shard: 3
+    replica: 2
+    from: 0
+    size: 10
+    timeout: 60
+
