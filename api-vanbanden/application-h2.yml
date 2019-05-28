@@ -1,0 +1,92 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+server:
+    port: 8081
+    
+logging:
+    level:
+        #ROOT: DEBUG
+        vn.tcx.framework: INFO
+        vn.tcx.eoffice.vanbanden: INFO
+    
+spring:
+    profiles:
+        active: local
+        #include:
+        #    - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+    jackson:
+        serialization:
+            indent-output: true
+    liquibase:
+        enabled: false
+        change-log: classpath:/migrations/h2/master.xml
+    h2:
+        console:
+            enabled: true
+    datasource:
+        driver-class-name: org.h2.Driver
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:~/data/eoffice/h2/vanbanden;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS vanbanden
+        username: sa
+        password: sa
+        hikari:
+            poolName: danhmuc-pool
+            maximum-pool-size: 2
+            connection-test-query: SELECT 1 FROM DUAL
+            connection-timeout: 60000
+            auto-commit: false
+            
+    jpa:
+        hibernate:
+            ddl-auto: none
+            dialect: org.hibernate.dialect.H2Dialect
+        #database-platform: org.hibernate.dialect.Oracle12cDialect
+        # database: ORACLE
+        show-sql: true
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            #hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
+            #hibernate.cache.hazelcast.instance_name: common
+            #hibernate.cache.use_minimal_puts: true
+            #hibernate.cache.hazelcast.use_lite_member: true
+    #data:
+    #    jest:
+    #        uri: http://localhost:9200
+    elasticsearch:
+      rest:
+        uris:
+        - https://es.eoffice.greenglobal.vn
+        username: elastic
+        password: changeme
+
+tcx:
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        
+elasticearch:
+  index:
+    name: 'vanbanden_1.1'
+    alias: 'vanbanden'
+    type: 'doc'
+    shard: 3
+    replica: 2
+    from: 0
+    size: 10
+    timeout: 60
+
