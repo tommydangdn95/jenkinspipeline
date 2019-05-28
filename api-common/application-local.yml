@@ -1,0 +1,97 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+server:
+    port: 8081
+    
+logging:
+    level:
+        #ROOT: INFO
+        org.springframework.boot : INFO
+        org.springframework.web: DEBUG
+        org.springframework.security: DEBUG
+        vn.tcx.framework: DEBUG
+        vn.tcx.eoffice.danhmuc: DEBUG     
+    
+spring:
+    profiles:
+        active: local
+        include:
+            - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+    devtools:
+        restart:
+            enabled: true
+    jackson:
+        serialization:
+            indent-output: true
+    liquibase:
+        enabled: false
+        change-log: classpath:/migrations/master.xml
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        #url: jdbc:oracle:thin:@14.176.232.86:7364:xe
+        url: jdbc:oracle:thin:@192.168.1.218:1539:xe
+        username: qoffice_anvt
+        password: abcd1234
+        hikari:
+            poolName: Hikari
+            auto-commit: false
+    jpa:
+        database-platform: org.hibernate.dialect.Oracle12cDialect
+        database: ORACLE
+        show-sql: true
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            #hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
+            #hibernate.cache.hazelcast.instance_name: common
+            #hibernate.cache.use_minimal_puts: true
+            #hibernate.cache.hazelcast.use_lite_member: true
+    data:
+        jest:
+            uri: http://192.168.1.219:9200
+            #uri: http://192.168.1.177:9200
+    #data:
+    #    elasticsearch:
+    #        properties:
+    #            path:
+    #                home: target/elasticsearch
+    kafka:
+        bootstrap-servers: 192.168.1.220:30011
+        client-id: danhmuc_service
+        group-id: danhmuc_group
+
+event:
+    topic:
+        don-vi: eof-local-donvi
+        phong-ban: eof-local-phongban
+        chuc-vu: eof-local-chucvu
+        nguoi-dung: eof-local-nguoidung
+        chuc-danh: eof-local-chucdanh
+        vai-tro: eof-local-vaitro
+
+tcx:
+    security:
+        authentication:
+            jwt:
+                # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+                base64-secret: Y2VmYTE1ZjhkZjA4NWI3YmZiYWNmMzAzYmY4YzcyZmQwYjRkYTNiYWUxZmE2ZTkwYTUzNWMzYTgxNzYwZjVhOGZiMzM3NzQ3ZmQ1ZGIzZDZkNmJmOTVkOWUwZmU4NTg5MTgzMDRkNmZhZWY1NzA0ZmU1NmU4NjJiMWM1ZjNhYjg=
+                # Token is valid 24 hours
+                token-validity-in-seconds: 86400
+                token-validity-in-seconds-for-remember-me: 2592000
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
