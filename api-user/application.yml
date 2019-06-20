@@ -1,10 +1,7 @@
 logging:
   level:
-    #ROOT: INFO
-    org.springframework.web : DEBUG
-    org.springframework.security : DEBUG
-    org.springframework.boot.autoconfigure.security.oauth2: DEBUG
-    org.springframework.cloud.netflix: DEBUG
+    vn.tcx.framework: DEBUG
+    vn.tcx.eoffice.user: DEBUG
 
 server:
   port: 8082
@@ -22,6 +19,9 @@ spring:
     favicon:
       enabled: false
   main.allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+        indent-output: true
   autoconfigure:
       exclude: 
           - org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration
@@ -76,7 +76,7 @@ management:
 
 eureka:
   client:
-    enabled: true
+    enabled: false
     healthcheck:
       enabled: true
     fetch-registry: true
@@ -101,18 +101,10 @@ eureka:
       git-commit: ${git.commit.id.abbrev:}
       git-branch: ${git.branch:}
 
-feign:
-  client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
-    location: 
-      gateway: https://dev-api-qn.eoffice.greenglobal.vn
-      #gateway: http://localhost:8080
-      danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
-      he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
-      
 security:
   oauth2:
     client: #SP eoffice-local
-      clientId: TajdoYxTyZI8XexKgnZnS3corK0a  
+      clientId: TajdoYxTyZI8XexKgnZnS3corK0a
       clientSecret: 7vCJR0hUi8EVYh8ULNp0FfqrmiEa
       scope:
       - openid
@@ -120,4 +112,19 @@ security:
     resource:
       user-info-uri: https://sso.lgsp.greenglobal.vn/oauth2/userinfo?schema=openid
 
+tcx:
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+
+feign:
+  client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
+    location: 
+      gateway: https://dev-api-qn.eoffice.greenglobal.vn
+      danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
+
 wso2.check-user: http://192.168.1.200:8090/isExistingUser?userName=
+
+

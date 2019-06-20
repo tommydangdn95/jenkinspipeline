@@ -10,7 +10,7 @@
 # ===================================================================
 spring:
     profiles:
-        active: prod
+        active: stag
         #include:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
@@ -21,10 +21,10 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:oracle:thin:@192.168.1.219:1539:xe
-        username: uaa_test1
+        username: uaa_stag
         password: abcd1234
         hikari:
-            poolName: Hikari
+            poolName: uaa-pool
             auto-commit: false
     jpa:
         show-sql: false
@@ -55,9 +55,9 @@ spring:
       timeout: 60
 
 security:
-  # byPassApiSecure: false
+  byPassApiSecure: false
   oauth2:
-    spGroup: Application/eoffice-test2
+    spGroup: Application/eoffice-stag
     client: # SP eoffice-test2
       clientId: fG9UCY6TrJT9rthbRJeQ_IqOf6Ia
       clientSecret: 7wWLpLGsYe245htTbrbrYmADdvwa
@@ -67,10 +67,10 @@ tcx:
         host: http://192.168.1.124:8088/notifier_api/v2/notices
         id: 1
         key: 4416be0b9fc2472fa2cf877dffa07d02
-        env: prod
+        env: stag
 
 feign:
   client:
     location: 
-      gateway: https://test1-api-qn.eoffice.greenglobal.vn
+      gateway: https://stag-api-qn.eoffice.greenglobal.vn
       
