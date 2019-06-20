@@ -73,4 +73,3 @@ feign:
   client:
     location: 
       gateway: https://test1-api-qn.eoffice.greenglobal.vn
-      
