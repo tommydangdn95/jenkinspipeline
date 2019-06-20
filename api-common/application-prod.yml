@@ -13,85 +13,89 @@ server:
     
 logging:
     level:
-        #ROOT: INFO
-        org.springframework.boot : INFO
-        org.springframework.web: DEBUG
-        org.springframework.security: DEBUG
-        vn.tcx.framework: DEBUG
-        vn.tcx.eoffice.danhmuc: DEBUG     
-    
+        #ROOT: DEBUG
+        vn.tcx.framework: INFO
+        vn.tcx.eoffice.danhmuc: INFO
+        com.netflix: OFF
 spring:
     profiles:
-        active: production
-        include:
-            - swagger
+        active: prod
+        #include:
+        #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
-    devtools:
-        restart:
-            enabled: true
     jackson:
         serialization:
             indent-output: true
     liquibase:
         enabled: false
         change-log: classpath:/migrations/master.xml
+    h2:
+        console:
+            enabled: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        #url: jdbc:oracle:thin:@14.176.232.86:7364:xe
         url: jdbc:oracle:thin:@192.168.1.219:1539:xe
         username: common_test1
         password: abcd1234
         hikari:
-            poolName: Hikari
+            poolName: danhmuc-pool
+            maximum-pool-size: 2
+            connection-test-query: SELECT 1 FROM DUAL
+            connection-timeout: 60000
             auto-commit: false
+            
     jpa:
-        database-platform: org.hibernate.dialect.Oracle12cDialect
-        database: ORACLE
+        hibernate:
+            ddl-auto: none
+            dialect: org.hibernate.dialect.H2Dialect
         show-sql: true
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.connection.provider_disables_autocommit: true
             hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
-            hibernate.generate_statistics: true
+            hibernate.generate_statistics: false
             #hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
             #hibernate.cache.hazelcast.instance_name: common
             #hibernate.cache.use_minimal_puts: true
             #hibernate.cache.hazelcast.use_lite_member: true
-    data:
-        jest:
-            uri: http://192.168.1.219:9200
-            #uri: http://192.168.1.177:9200
     #data:
-    #    elasticsearch:
-    #        properties:
-    #            path:
-    #                home: target/elasticsearch
-    kafka:
-        bootstrap-servers: 192.168.1.220:30011
-        client-id: danhmuc_service
-        group-id: danhmuc_group
-
-event:
-    topic:
-        don-vi: eof-prod-donvi
-        phong-ban: eof-prod-phongban
-        chuc-vu: eof-prod-chucvu
-        nguoi-dung: eof-prod-nguoidung
-        chuc-danh: eof-prod-chucdanh
-        vai-tro: eof-prod-vaitro
-
+    #    jest:
+    #        uri: http://localhost:9200
+    elasticsearch:
+      rest:
+        uris:
+        - https://es.eoffice.greenglobal.vn
+        username: elastic
+        password: changeme
+        
+elasticearch:
+  index:
+    name: 'danhmuc_1.1'
+    alias: 'danhmuc'
+    type: 'doc'
+    shard: 3
+    replica: 2
+    from: 0
+    size: 10
+    timeout: 60 
+       
 tcx:
-    security:
-        authentication:
-            jwt:
-                # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-                base64-secret: Y2VmYTE1ZjhkZjA4NWI3YmZiYWNmMzAzYmY4YzcyZmQwYjRkYTNiYWUxZmE2ZTkwYTUzNWMzYTgxNzYwZjVhOGZiMzM3NzQ3ZmQ1ZGIzZDZkNmJmOTVkOWUwZmU4NTg5MTgzMDRkNmZhZWY1NzA0ZmU1NmU4NjJiMWM1ZjNhYjg=
-                # Token is valid 24 hours
-                token-validity-in-seconds: 86400
-                token-validity-in-seconds-for-remember-me: 2592000
     cors:
         allowed-origins: "*"
         allowed-methods: "*"
         allowed-headers: "*"
+        
+security:
+  byPassApiSecure: false
+  oauth2:
+    spGroup: Application/eoffice-test2
+    client: # SP eoffice-test2
+      clientId: fG9UCY6TrJT9rthbRJeQ_IqOf6Ia 
+      clientSecret: 7wWLpLGsYe245htTbrbrYmADdvwa
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@192.168.1.115:8761/eureka/

@@ -8,15 +8,6 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-server:
-  port: 8083
-    
-logging:
-  level:
-    ROOT: INFO
-    vn.tcx.framework: DEBUG
-    vn.tcx.eoffice.vanbanden: DEBUG
-    
 spring:
   profiles:
       active: prod
@@ -24,12 +15,6 @@ spring:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
-  devtools:
-    restart:
-      enabled: true
-  jackson:
-    serialization:
-      indent-output: true
   liquibase:
     enabled: false
     change-log: classpath:/migrations/master.xml
@@ -40,14 +25,10 @@ spring:
     password: abcd1234
     hikari:
       driver-class-name: oracle.jdbc.OracleDriver
-      poolName: Hikari
+      poolName: vanbanden-pool
       auto-commit: false
   jpa:
-    hibernate:
-      ddl-auto: none
-    # database-platform: org.hibernate.dialect.Oracle12cDialect
-    # database: ORACLE
-    show-sql: true
+    show-sql: false
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.connection.provider_disables_autocommit: true
@@ -64,31 +45,32 @@ spring:
       - https://es.eoffice.greenglobal.vn
       username: elastic
       password: changeme
+    index:
+      alias: 'qoffice_test_vanbanden'
+      type: 'doc'
+      shard: 3
+      replica: 2
+      from: 0
+      size: 10
+      timeout: 60
+    time:
+      timeZoneId: 'UTC+7'
 
-elasticsearch:
-  index:
-    alias: 'qoffice_test_vanbanden'
-    type: 'doc'
-    shard: 3
-    replica: 2
-    from: 0
-    size: 10
-    timeout: 60
-
-tcx:
-  cors:
-    allowed-origins: "*"
-    allowed-methods: "*"
-    allowed-headers: "*"
-    
 security:
-  # byPassApiSecure: false
+  byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-test2
     client: # SP eoffice-test2
       clientId: fG9UCY6TrJT9rthbRJeQ_IqOf6Ia 
       clientSecret: 7wWLpLGsYe245htTbrbrYmADdvwa
       
+tcx:
+    errbit:
+        host: http://192.168.1.124:8088/notifier_api/v2/notices
+        id: 1
+        key: 2f08ff0565b044483f4cd53a57e6f0dd
+        env: prod
+
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location: 

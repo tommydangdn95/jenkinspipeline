@@ -8,48 +8,26 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-server:
-    port: 8083
-    
-logging:
-    level:
-        #ROOT: DEBUG
-        vn.tcx.framework: INFO
-        vn.tcx.eoffice.hosocongviec: INFO
-        #com.zaxxer.hikari: DEBUG
-        #org.hibernate.dialect: DEBUG
-    
 spring:
     profiles:
-        active: dev
+        active: prod
         #include:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
-    jackson:
-        serialization:
-            indent-output: true
     liquibase:
         enabled: false
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@192.168.1.218:1539:xe
-        username: hosocongviec_dev
-        password: Tcx12345
+        url: jdbc:oracle:thin:@192.168.1.219:1539:xe
+        username: vanbandi_test1
+        password: abcd1234
         hikari:
-            poolName: hosocongviec-pool
-            maximum-pool-size: 2
-            connection-test-query: SELECT 1 FROM DUAL
-            connection-timeout: 60000
+            poolName: vanbandi-pool
             auto-commit: false
-            
     jpa:
-        hibernate:
-            ddl-auto: none
-        #database-platform: org.hibernate.dialect.Oracle12cDialect
-        # database: ORACLE
-        show-sql: true
+        show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.connection.provider_disables_autocommit: true
@@ -60,38 +38,34 @@ spring:
             #hibernate.cache.hazelcast.instance_name: common
             #hibernate.cache.use_minimal_puts: true
             #hibernate.cache.hazelcast.use_lite_member: true
-    #data:
-    #    jest:
-    #        uri: http://localhost:9200
     elasticsearch:
       rest:
         uris:
         - https://es.eoffice.greenglobal.vn
         username: elastic
         password: changeme
+      index:
+        alias: 'qoffice_test_vanbandi'
+        type: 'doc'
+        shard: 3
+        replica: 2
+        from: 0
+        size: 10
+        timeout: 60
+      time:
+        timeZoneId: 'Etc/GMT+7'
 
-    kafka:
-        bootstrap-servers: 192.168.1.210:30011
-        producer:
-          client-id: hosocongviec_service
-        consumer:
-          client-id: hosocongviec_service
-          group-id: hosocongviec_group
-
+security:
+  byPassApiSecure: false
+  oauth2:
+    spGroup: Application/eoffice-test2
+    client:
+      clientId: fG9UCY6TrJT9rthbRJeQ_IqOf6Ia
+      clientSecret: 7wWLpLGsYe245htTbrbrYmADdvwa
+      
 tcx:
-    cors:
-        allowed-origins: "*"
-        allowed-methods: "*"
-        allowed-headers: "*"
-        
-elasticsearch:
-  index:
-    alias: 'qoffice_dev_hosocongviec'
-    type: 'doc'
-    shard: 3
-    replica: 2
-    from: 0
-    size: 10
-    timeout: 60
-
-
+    errbit:
+        host: http://192.168.1.124:8088/notifier_api/v2/notices
+        id: 1
+        key: 247d843d714b62dd55672d3c919630fe
+        env: prod

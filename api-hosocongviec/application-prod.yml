@@ -8,15 +8,6 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-server:
-    port: 8082
-    
-logging:
-    level:
-        ROOT: INFO
-        vn.tcx.framework: INFO
-        vn.tcx.eoffice.user: INFO
-    
 spring:
     profiles:
         active: prod
@@ -24,29 +15,19 @@ spring:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
-    devtools:
-        restart:
-            enabled: true
-    jackson:
-        serialization:
-            indent-output: true
     liquibase:
         enabled: false
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@192.168.1.218:1539:xe
-        username: hosocongviec
-        password: Tcx12345
+        url: jdbc:oracle:thin:@192.168.1.219:1539:xe
+        username: hosocongviec_test1
+        password: abcd1234
         hikari:
             poolName: hosocongviec-pool
             auto-commit: false
     jpa:
-        hibernate:
-            ddl-auto: none
-        # database-platform: org.hibernate.dialect.Oracle12cDialect
-        # database: ORACLE
-        show-sql: true
+        show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.connection.provider_disables_autocommit: true
@@ -57,40 +38,40 @@ spring:
             #hibernate.cache.hazelcast.instance_name: common
             #hibernate.cache.use_minimal_puts: true
             #hibernate.cache.hazelcast.use_lite_member: true
-            
     elasticsearch:
       rest:
         uris:
         - https://es.eoffice.greenglobal.vn
         username: elastic
         password: changeme
-
-elasticsearch:
-  index:
-    alias: 'qoffice_test_vanbanden'
-    type: 'doc'
-    shard: 3
-    replica: 2
-    from: 0
-    size: 10
-    timeout: 60
-
-tcx:
-    cors:
-        allowed-origins: "*"
-        allowed-methods: "*"
-        allowed-headers: "*"
+      index:
+        alias: 'qoffice_test_hosocongviec'
+        type: 'doc'
+        shard: 3
+        replica: 2
+        from: 0
+        size: 10
+        timeout: 60
+      time:
+        timeZoneId: 'UTC+7'
 
 security:
-  # byPassApiSecure: false
+  byPassApiSecure: false
   oauth2:
-    spGroup: Application/eoffice-gateway
-    client: # SP eoffice-gateway
-      clientId: jBVKzCkGmtlfSKW3c5nTkW_ycbsa 
-      clientSecret: Knsz7AjposmGcyQ1A3Z5xURUQaUa
-      
+    spGroup: Application/eoffice-test2
+    client:
+      clientId: fG9UCY6TrJT9rthbRJeQ_IqOf6Ia
+      clientSecret: 7wWLpLGsYe245htTbrbrYmADdvwa
+
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location: 
       gateway: https://test1-api-qn.eoffice.greenglobal.vn
-
+      file.url: https://test1-file-qn.eoffice.greenglobal.vn/api
+      
+tcx:
+    errbit:
+        host: http://192.168.1.124:8088/notifier_api/v2/notices
+        id: 1
+        key: 88bb2a78f42613ec4ec9a7275d5f5e20
+        env: prod
