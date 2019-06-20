@@ -10,7 +10,7 @@
 # ===================================================================
 spring:
     profiles:
-        active: prod
+        active: prod2
         #include:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
@@ -20,9 +20,9 @@ spring:
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@192.168.1.219:1539:xe
-        username: uaa_test2
-        password: abcd1234
+        url: jdbc:oracle:thin:@192.168.1.219:1539:xe   # test2
+        username: uaa_test2         # test2
+        password: abcd1234          # test2
         hikari:
             poolName: Hikari
             auto-commit: false
