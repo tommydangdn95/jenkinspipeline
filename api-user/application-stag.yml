@@ -57,7 +57,7 @@ spring:
 security:
   byPassApiSecure: false
   oauth2:
-    spGroup: Application/eoffice-stag
+    spGroup: Application/eoffice-test2
     client: # SP eoffice-test2
       clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
       clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
