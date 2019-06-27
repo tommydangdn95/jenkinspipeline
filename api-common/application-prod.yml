@@ -13,9 +13,9 @@ server:
     
 logging:
     level:
-        ROOT: INFO
-        vn.tcx.framework: INFO
-        vn.tcx.eoffice.danhmuc: INFO
+        ROOT: DEBUG
+        vn.tcx.framework: DEBUG
+        vn.tcx.eoffice.danhmuc: DEBUG
         com.netflix: OFF
 spring:
     profiles:
