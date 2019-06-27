@@ -3,9 +3,9 @@ server:
     
 logging:
     level:
-        ROOT: DEBUG
-        vn.tcx.framework: DEBUG
-        vn.tcx.eoffice.danhmuc: DEBUG     
+        ROOT: INFO      
+        vn.tcx.framework: INFO
+        vn.tcx.eoffice.danhmuc: INFO     
     
 spring:
     application:
