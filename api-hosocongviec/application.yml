@@ -1,7 +1,7 @@
 logging:
   level:
     #ROOT: INFO
-    vn.tcx.framework: DEBUG
+    vn.tcx.framework: INFO
     vn.tcx.eoffice.hosocongviec: INFO
     #com.zaxxer.hikari: DEBUG
     #org.springframework.web : DEBUG
