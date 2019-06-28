@@ -13,7 +13,7 @@ server:
     
 logging:
     level:
-        ROOT: INFO
+        ROOT: DEBUG
         vn.tcx.framework: INFO
         vn.tcx.eoffice.danhmuc: INFO
         com.netflix: OFF
