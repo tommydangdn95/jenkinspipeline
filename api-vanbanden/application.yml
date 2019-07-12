@@ -1,9 +1,9 @@
 logging:
   level:
     #ROOT: INFO
-    org.springframework.web : DEBUG
-    org.springframework.security : DEBUG
-    org.springframework.boot.autoconfigure.security.oauth2: DEBUG
+    org.springframework.web : INFO
+    org.springframework.security : INFO
+    org.springframework.boot.autoconfigure.security.oauth2: INFO
     org.springframework.cloud.netflix: DEBUG
     
 server:

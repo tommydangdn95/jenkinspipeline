@@ -9,11 +9,11 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 server:
-    port: 8081
+    port: 8082
     
 logging:
     level:
-        ROOT: INFO
+        ROOT: DEBUG
         vn.tcx.framework: INFO
         vn.tcx.eoffice.danhmuc: INFO
         com.netflix: OFF
