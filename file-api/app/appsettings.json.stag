@@ -1,0 +1,35 @@
+{
+    "Logging": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    },
+    "AllowedHosts": "*",
+    "App": {
+      "Env": "dev",
+      "AppMode": false,
+      "UploadPath": "files-stag"
+    },
+    "Serilog": {
+      "Using": [ "Serilog.Sinks.File" ],
+      "MinimumLevel": "Debug",
+      "WriteTo": [
+        {
+          "Name": "File",
+          "Args": {
+            "path": "log-.txt",
+            "rollingInterval": "Day"
+          }
+        }
+      ],
+      "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ]
+    },
+    "Airbrake": {
+      "ProjectId": "1",
+      "ProjectKey": "35b24a99032d8d22e029d6a0cd5044f0",
+      "Host":  "http://192.168.1.124:8088"
+    },
+    "Database": {
+      "Connection": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.255.45.12)(PORT=1521))(CONNECT_DATA=(SID=XE)));User Id=vanbanden;Password=Eoffqn1234;Pooling=true;Min Pool Size=10;Max Pool Size=1000;Connection Timeout=120;connection lifetime=1800;"
+    }
+  }
