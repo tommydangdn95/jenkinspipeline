@@ -30,6 +30,6 @@
       "Host":  "http://192.168.1.124:8088"
     },
     "Database": {
-      "Connection": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.255.45.15)(PORT=1521))(CONNECT_DATA=(SID=XE)));User Id=vanbanden;Password=Eoffqn12345;Pooling=true;Min Pool Size=10;Max Pool Size=1000;Connection Timeout=120;connection lifetime=1800;"
+      "Connection": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.255.45.12)(PORT=1521))(CONNECT_DATA=(SID=XE)));User Id=vanbanden;Password=Eoffqn1234;Pooling=true;Min Pool Size=10;Max Pool Size=1000;Connection Timeout=120;connection lifetime=1800;"
     }
   }
