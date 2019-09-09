@@ -6,7 +6,7 @@
   },
   "AllowedHosts": "*",
   "App": {
-    "Env": "dev",
+    "Env": "live",
     "AppMode": false,
     "UploadPath": "files-live"
   },
