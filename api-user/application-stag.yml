@@ -20,7 +20,7 @@ spring:
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@10.233.0.54:1521:xe
+        url: jdbc:oracle:thin:@10.255.45.15:1521:xe
         username: uaa
         password: Eoffqn12345
         hikari:
@@ -41,7 +41,7 @@ spring:
     elasticsearch:
       rest:
         uris:
-        - https://10.233.0.49:9200
+        - http://10.255.25.11:9200
         username: elastic
         password: changeme
     index:
@@ -55,22 +55,26 @@ spring:
       timeout: 60
 
 security:
-  byPassApiSecure: false
+  # byPassApiSecure: false
   oauth2:
-    spGroup: Application/eoffice-test2
-    client: # SP eoffice-test2
+    spGroup: Application/eoffice-stag
+    client: # SP eoffice-stag
       clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
       clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
-      
-# tcx:
-#     errbit:
-#         host: http://192.168.1.124:8088/notifier_api/v2/notices
-#         id: 1
-#         key: 4416be0b9fc2472fa2cf877dffa07d02
-#         env: stag
+    resource:
+      user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
+
+tcx:
+    errbit:
+        host: http://10.255.35.21:8088/notifier_api/v2/notices
+        id: 1
+        key: bc813abf350c54e6d8987b2328275b71
+        env: stag
 
 feign:
   client:
     location: 
-      gateway: http://api-qoffice-staging.qti.vn
+      gateway: http://api-qoffice-staging.quangnam.gov.vn
+
+wso2.check-user: http://api-qoffice-staging.quangnam.gov.vn/admin/isExistingUser?userName=
       
