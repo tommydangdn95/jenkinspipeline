@@ -61,7 +61,7 @@ security:
   #byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-live
-    client: # SP eoffice-test2
+    client: # SP eoffice-live
       clientId: eqaR_x5qvVawWeKyfH8ZEVZ8utUa
       clientSecret: q5atJMH8QpHc0PWyQbsyPfsDpvwa
     resource:
