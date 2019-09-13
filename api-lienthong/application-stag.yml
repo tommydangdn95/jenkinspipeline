@@ -58,7 +58,7 @@ security:
   #byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-stag
-    client: # SP eoffice-test2
+    client: # SP eoffice-stag
       clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
       clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
     resource:
