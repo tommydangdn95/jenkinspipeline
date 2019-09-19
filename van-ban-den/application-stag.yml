@@ -84,3 +84,4 @@ feign:
     location: 
       gateway: http://api-qoffice-staging.quangnam.gov.vn
       url-file: http://file-qoffice-staging.quangnam.gov.vn/api/file/upload
+      file.url: http://file-qoffice-staging.quangnam.gov.vn/api
