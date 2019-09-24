@@ -98,7 +98,7 @@ services:
 
   monitor:
     image: landoop/kafka-topics-ui
-    container_name: monitor
+    container_name: kafka-topics
     restart: always
     environment:
       KAFKA_REST_PROXY_URL: "http://restproxy:8082"
@@ -107,3 +107,18 @@ services:
       - "8000:8000"
     depends_on:
       - restproxy
+  
+  # kafka-manager
+  manager:
+    image: hlebalbau/kafka-manager
+    container_name: kafa-manager
+    restart: always
+    environment:
+      ZK_HOSTS: "zookeeper:2181"
+      KAFKA_MANAGER_AUTH_ENABLED: "true"
+      KAFKA_MANAGER_USERNAME: "admin"
+      KAFKA_MANAGER_PASSWORD: "Eoffqn@12345"
+    ports:
+      - "9000:9000"
+    depends_on:
+      - zookeeper
