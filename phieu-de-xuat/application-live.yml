@@ -46,7 +46,7 @@ spring:
         username: elastic
         password: changeme
       index:
-        alias: 'qoffice_stag_phieudexuat'
+        alias: 'qoffice_live_phieudexuat'
         type: 'doc'
         shard: 3
         replica: 2
@@ -68,10 +68,10 @@ security:
 
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
-    location: 
+    location:
       gateway: http://api-qoffice.quangnam.gov.vn
       file.url: http://file-qoffice.quangnam.gov.vn/api
-      
+
 tcx:
     errbit:
         host: http://10.255.35.21:8088/notifier_api/v2/notices

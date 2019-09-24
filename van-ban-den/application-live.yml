@@ -52,7 +52,7 @@ spring:
       username: elastic
       password: changeme
     index:
-      alias: 'qoffice_stag_vanbanden'
+      alias: 'qoffice_live_vanbanden'
       type: 'doc'
       shard: 3
       replica: 2
@@ -66,7 +66,7 @@ security:
   # byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-live
-    client: # SP eoffice-stag
+    client: # SP eoffice-live
       clientId: eqaR_x5qvVawWeKyfH8ZEVZ8utUa 
       clientSecret: q5atJMH8QpHc0PWyQbsyPfsDpvwa
     resource:

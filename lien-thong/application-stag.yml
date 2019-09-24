@@ -63,7 +63,7 @@ security:
       clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
     resource:
       user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
-      
+
 tcx:
     errbit:
         host: http://10.255.35.21:8088/notifier_api/v2/notices
@@ -73,6 +73,5 @@ tcx:
 
 feign:
   client:
-    location: 
+    location:
       gateway: http://api-qoffice-staging.quangnam.gov.vn
-      
