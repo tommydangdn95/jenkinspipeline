@@ -40,7 +40,6 @@ spring:
       #hibernate.cache.use_minimal_puts: true
       #hibernate.cache.hazelcast.use_lite_member: true
   elasticsearch:
-    search-enabled: true
     rest:
       uris:
       - http://10.255.25.11:9200
@@ -66,7 +65,7 @@ security:
       clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
     resource:
       user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
-      
+
 tcx:
     errbit:
         host: http://10.255.35.21:8088/notifier_api/v2/notices
@@ -76,6 +75,6 @@ tcx:
 
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
-    location: 
+    location:
       gateway: http://api-qoffice-staging.quangnam.gov.vn
-      file.url: http://file-qoffice-staging.quangnam.gov.vn
+      file.url: http://file-qoffice-staging.quangnam.gov.vn/api
