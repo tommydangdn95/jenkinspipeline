@@ -61,11 +61,11 @@ services:
       - kafka
       - schemaregistry
 
-  connect:
+  connector:
     image: confluentinc/cp-kafka-connect:5.3.1
-    container_name: connect
+    container_name: connector
     environment:
-      CONNECT_REST_HOST_NAME: "connect"
+      CONNECT_REST_HOST_NAME: "connector"
       CONNECT_BOOTSTRAP_SERVERS: "kafka:9092"
       CONNECT_REST_PORT: 8083
       CONNECT_GROUP_ID: "eoffqn"
