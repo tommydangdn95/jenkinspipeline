@@ -102,6 +102,7 @@ services:
     restart: always
     environment:
       KAFKA_REST_PROXY_URL: "http://restproxy:8082"
+      PROXY: "true"
     ports:
       - "8000:8000"
     depends_on:
