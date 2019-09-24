@@ -103,6 +103,6 @@ services:
     environment:
       KAFKA_REST_PROXY_URL: "http://restproxy:8082"
     ports:
-      - "9021:9021"
+      - "8000:8000"
     depends_on:
       - restproxy
