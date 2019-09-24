@@ -46,7 +46,7 @@ services:
 
   # rest api
   restproxy:
-    image: confluentinc/cp-kafka-rest:5.2.1
+    image: confluentinc/cp-kafka-rest:5.3.1
     container_name: restproxy
     restart: always
     environment:
