@@ -64,6 +64,7 @@ services:
   connector:
     image: confluentinc/cp-kafka-connect:5.3.1
     container_name: connector
+    restart: always
     environment:
       CONNECT_REST_HOST_NAME: "connector"
       CONNECT_BOOTSTRAP_SERVERS: "kafka:9092"
@@ -98,6 +99,7 @@ services:
   monitor:
     image: confluentinc/cp-enterprise-control-center:5.3.1
     container_name: monitor
+    restart: always
     environment:
       CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2181
       CONTROL_CENTER_BOOTSTRAP_SERVERS: kafka:9092
