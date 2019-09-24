@@ -95,3 +95,22 @@ services:
       - kafka
       - schemaregistry
 
+  monitor:
+    image: confluentinc/cp-enterprise-control-center:5.3.1
+    container_name: monitor
+    environment:
+      CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONTROL_CENTER_BOOTSTRAP_SERVERS: kafka:9092
+      CONTROL_CENTER_REPLICATION_FACTOR: 1
+      CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
+      CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
+      CONTROL_CENTER_STREAMS_NUM_STREAM_THREADS: 2
+      CONTROL_CENTER_CONNECT_CLUSTER: http://restproxy:8082
+    volumes:
+     - /media/control-center/data:/var/lib/confluent-control-center
+    ports:
+      - "9021:9021"
+    depends_on:
+      - zookeeper
+      - kafka
+      - restproxy
