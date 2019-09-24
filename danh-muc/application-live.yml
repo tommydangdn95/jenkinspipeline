@@ -45,7 +45,7 @@ spring:
         username: elastic
         password: changeme
       index:
-        alias: 'qoffice_stag_coquanbanhanh' 
+        alias: 'qoffice_live_coquanbanhanh' 
         type: 'doc'
         shard: 3
         replica: 2
