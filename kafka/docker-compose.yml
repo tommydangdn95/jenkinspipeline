@@ -5,6 +5,7 @@ services:
  # store data
   zookeeper:
     image: confluentinc/cp-zookeeper:5.3.1
+    container_name: zookeeper
     restart: always
     environment:
       ZOOKEEPER_CLIENT_PORT: "2181"
@@ -17,6 +18,7 @@ services:
   #broder
   kafka:
     image: confluentinc/cp-kafka:5.3.1
+    container_name: kafka
     restart: always
     ports:
       - "9092:9092"
