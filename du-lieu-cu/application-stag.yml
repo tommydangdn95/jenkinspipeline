@@ -1,0 +1,94 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+spring:
+    profiles:
+        active: stag
+        #include:
+        #    - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+    liquibase:
+        enabled: false
+        change-log: classpath:/migrations/master.xml
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:oracle:thin:@10.255.45.30:1521:xe
+        username: qnoffice_data
+        password: Eoffqn1234
+        hikari:
+            poolName: vanbandi-hikari
+            maximum-pool-size: 2
+            connection-test-query: SELECT 1 FROM DUAL
+            connection-timeout: 60000
+            auto-commit: false
+    jpa:
+        show-sql: false
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            #hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
+            #hibernate.cache.hazelcast.instance_name: common
+            #hibernate.cache.use_minimal_puts: true
+            #hibernate.cache.hazelcast.use_lite_member: true
+    elasticsearch:
+      search-enabled: true
+      rest:
+        uris:
+        - http://10.255.25.11:9200
+        username: elastic
+        password: changeme
+      index:
+        alias: 'qoffice_staging_vanbandi'
+        type: 'doc'
+        shard: 3
+        replica: 2
+        from: 0
+        size: 10
+        timeout: 60
+      time:
+        timeZoneId: 'UTC+7'
+
+security:
+  #byPassApiSecure: false
+  oauth2:
+    spGroup: Application/eoffice-stag
+    client:
+      clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
+      clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
+    resource:
+      user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
+      
+tcx:
+    errbit:
+        host: http://10.255.35.21:8088/notifier_api/v2/notices
+        id: 1
+        key: 99301348c8d2aa27f46ce522befaf65b
+        env: stag
+
+feign:
+  client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
+    location: 
+      gateway: http://api-qoffice-staging.quangnam.gov.vn
+      danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
+      ho-so-cong-viec.url: ${feign.client.location.gateway}/ho-so-cong-viec/api/client
+      #${feign.client.location.gateway}/ho-so-cong-viec/api/client
+      #ho-so-cong-viec.url: http://localhost:8085/api/client 
+      #http://192.168.1.194:8085/api/client 
+      van-ban-den.url: ${feign.client.location.gateway}/van-ban-den/api/client
+      #http://localhost:8083/api/client 
+      #${feign.client.location.gateway}/van-ban-den/api/client
+      file.url: http://file-qoffice-staging.quangnam.gov.vn
+      lien-thong.url: ${feign.client.location.gateway}/lien-thong/api
+      
