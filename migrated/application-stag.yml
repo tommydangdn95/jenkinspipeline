@@ -91,4 +91,5 @@ feign:
       #${feign.client.location.gateway}/van-ban-den/api/client
       file.url: http://file-qoffice-staging.quangnam.gov.vn
       lien-thong.url: ${feign.client.location.gateway}/lien-thong/api
+      phieu-yeu-cau.url: ${feign.client.location.gateway}/phieu-yeu-cau/api/client
       
