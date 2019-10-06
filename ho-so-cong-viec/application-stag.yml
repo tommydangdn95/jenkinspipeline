@@ -39,7 +39,6 @@ spring:
             #hibernate.cache.use_minimal_puts: true
             #hibernate.cache.hazelcast.use_lite_member: true
     elasticsearch:
-      search-enabled: true
       rest:
         uris:
         - http://10.255.25.11:9200
