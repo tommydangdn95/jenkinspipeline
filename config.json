@@ -270,6 +270,7 @@
     },
     "dev": {
         "credentialsId" : "jenkins",
+        "credentialsIdSv" : "eoffqn-jenkins-server",
         "servers": [
             {
                 "name" : "server218",
