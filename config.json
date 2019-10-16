@@ -288,8 +288,8 @@
                 "allowAnyHosts": "true"
             },
             {
-                "name" : "server223",
-                "host" : "192.168.1.223",
+                "name" : "server233",
+                "host" : "192.168.1.233",
                 "allowAnyHosts": "true"
             }
         ],
