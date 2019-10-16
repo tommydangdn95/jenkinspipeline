@@ -272,32 +272,24 @@
         "credentialsId" : "jenkins",
         "servers": [
             {
-                "remote218" : {
-                    "name" : "server218",
-                    "host" : "192.168.1.218",
-                    "allowAnyHosts": "true"
-                }
+                "name" : "server218",
+                "host" : "192.168.1.218",
+                "allowAnyHosts": "true"
             },
             {
-                "remote219" : {
-                    "name" : "server219",
-                    "host" : "192.168.1.219",
-                    "allowAnyHosts": "true"
-                }
+                "name" : "server219",
+                "host" : "192.168.1.219",
+                "allowAnyHosts": "true"
             },
             {
-                "remote220" : {
-                    "name" : "server220",
-                    "host" : "192.168.1.220",
-                    "allowAnyHosts": "true"
-                }
+                "name" : "server220",
+                "host" : "192.168.1.220",
+                "allowAnyHosts": "true"
             },
             {
-                "remote223" : {
-                    "name" : "server223",
-                    "host" : "192.168.1.223",
-                    "allowAnyHosts": "true"
-                }
+                "name" : "server223",
+                "host" : "192.168.1.223",
+                "allowAnyHosts": "true"
             }
         ],
         "job-config-path": {
