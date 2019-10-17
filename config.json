@@ -340,7 +340,7 @@
                 "deploy-folder-suffix" : "api-vanbanden/vanbanden-deploy",
                 "send-file-folder" : "target",
                 "original-name-package" : "vanbandi-1.0.0.war",
-                "slack-notify": "#deploy-api-vanbadi"
+                "slack-notify": "#deploy-api-vanbandi"
             },
             "ho-so-cong-viec": {
                 "git-url" : "git@bitbucket.org:toancauxanh/eoffice-qn-api-hosocongviec.git",
