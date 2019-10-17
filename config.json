@@ -307,7 +307,7 @@
                 "running-folder" : "/media/hdd/nginx/nginx-dev/www",
                 "deploy-folder-suffix" : "fe-deploy",
                 "send-file-folder" : "build",
-                "command-restart" : "kubectl replace --force -f /home/eoffqn/eoffice-qn-sysconfig/nginx/dev-test/nginx-test/nginx-test-dp.yml",
+                "command-restart" : "kubectl replace --force -f /home/eoffqn/eoffice-qn-sysconfig/nginx/dev-test/nginx-dev/nginx-dev-dp.yml",
                 "slack-notify": "#build-fe"
             },
             "he-thong" : {
