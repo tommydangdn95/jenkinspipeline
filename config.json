@@ -373,6 +373,14 @@
                 "send-file-folder" : "target",
                 "original-name-package" : "phieudexuat-1.0.0.war",
                 "slack-notify": "#deploy-api-phdexuat"
+            },
+            "migrated": {
+                "git-url" : "git@bitbucket.org:toancauxanh/eoffice-qn-api-dulieucu.git",
+                "running-folder" : "/media/hdd/tomcat-api-dulieucu-dev",
+                "deploy-folder-suffix" : "api-dulieucu/dulieucu-deploy",
+                "send-file-folder" : "target",
+                "original-name-package" : "dulieucu-1.0.0.war",
+                "slack-notify": "#deploy-api-dulieucu"
             }
         }
     }
