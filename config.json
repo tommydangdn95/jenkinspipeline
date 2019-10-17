@@ -337,7 +337,7 @@
             "van-ban-di": {
                 "git-url" : "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
                 "running-folder" : "/media/hdd/tomcat-api-vanbandi",
-                "deploy-folder-suffix" : "api-vanbanden/vanbanden-deploy",
+                "deploy-folder-suffix" : "api-vanbandi/vanbandi-deploy",
                 "send-file-folder" : "target",
                 "original-name-package" : "vanbandi-1.0.0.war",
                 "slack-notify": "#deploy-api-vanbandi"
