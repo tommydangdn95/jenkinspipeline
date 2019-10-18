@@ -389,6 +389,14 @@
                 "send-file-folder" : "target",
                 "original-name-package" : "lichcongtac-1.0.0.war",
                 "slack-notify": "#deploy-api-lichcongtac"
+            },
+            "notify": {
+                "git-url" : "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
+                "running-folder" : "/media/hdd/tomcat-api-notify",
+                "deploy-folder-suffix" : "api-notify/notify-deploy",
+                "send-file-folder" : "target",
+                "original-name-package" : "notifyapi-1.0.0.war",
+                "slack-notify": "#deploy-api-notify"
             }
         }
     }
