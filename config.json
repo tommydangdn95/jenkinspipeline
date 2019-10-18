@@ -381,6 +381,14 @@
                 "send-file-folder" : "target",
                 "original-name-package" : "dulieucu-1.0.0.war",
                 "slack-notify": "#deploy-api-dulieucu"
+            },
+            "lich-cong-tac": {
+                "git-url" : "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
+                "running-folder" : "/media/hdd/tomcat-api-lichcongtac",
+                "deploy-folder-suffix" : "api-lichcongtac/lichcongtac-deploy",
+                "send-file-folder" : "target",
+                "original-name-package" : "lichcongtac-1.0.0.war",
+                "slack-notify": "#deploy-api-lichcongtac"
             }
         }
     }
