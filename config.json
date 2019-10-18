@@ -397,6 +397,14 @@
                 "send-file-folder" : "target",
                 "original-name-package" : "notifyapi-1.0.0.war",
                 "slack-notify": "#deploy-api-notify"
+            },
+            "trao-doi-noi-bo": {
+                "git-url" : "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
+                "running-folder" : "/media/hdd/tomcat-api-traodoinoibo",
+                "deploy-folder-suffix" : "api-traodoinoibo/traodoinoibo-deploy",
+                "send-file-folder" : "target",
+                "original-name-package" : "traodoinoibo-1.0.0.war",
+                "slack-notify": "#deploy-api-traodoinoibo"
             }
         }
     }
