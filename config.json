@@ -190,7 +190,7 @@
         "job": {
             "fe": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fe.git",
-                "running-folder": "/usr/share/nginx/html/",
+                "running-folder": "/usr/share/nginx/stag",
                 "deploy-folder-suffix": "fe-deploy",
                 "send-file-folder": "build",
                 "command-restart": "service nginx restart",
