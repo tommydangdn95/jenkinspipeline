@@ -95,7 +95,7 @@
             "van-ban-di": {
                 "user-db": "vanbandi",
                 "password-db": "Eoffqn1234",
-                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
                 "running-folder": "/etc/tomcat/api-vanbanden/webapps",
                 "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
                 "send-file-folder": "target",
@@ -253,7 +253,7 @@
             "van-ban-di": {
                 "user-db": "vanbandi",
                 "password-db": "Eoffqn12345",
-                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
                 "running-folder": "/etc/tomcat/api-vanbanden/webapps",
                 "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
                 "send-file-folder": "target",
