@@ -149,6 +149,30 @@
                 "send-file-folder": "target",
                 "original-name-package": "dulieucu-1.0.0.war",
                 "slack-notify": "#deploy-api-dulieucu"
+            },
+            "lich-cong-tac": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
+                "running-folder": "/etc/tomcat/api-lichcongtac/webapps",
+                "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "lichcongtac-1.0.0.war",
+                "slack-notify": "#deploy-api-lichcongtac"
+            },
+            "notify": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
+                "running-folder": "/etc/tomcat/api-notify/webapps",
+                "deploy-folder-suffix": "api-notify/notify-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "notifyapi-1.0.0.war",
+                "slack-notify": "#deploy-api-notify"
+            },
+            "trao-doi-noi-bo": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
+                "running-folder": "/etc/tomcat/api-traodoinoibo/webapps",
+                "deploy-folder-suffix": "api-traodoinoibo/traodoinoibo-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "traodoinoibo-1.0.0.war",
+                "slack-notify": "#deploy-api-traodoinoibo"
             }
         }
     },
@@ -283,6 +307,30 @@
                 "send-file-folder": "target",
                 "original-name-package": "dulieucu-1.0.0.war",
                 "slack-notify": "#deploy-api-dulieucu"
+            },
+            "lich-cong-tac": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
+                "running-folder": "/etc/tomcat/api-lichcongtac/webapps",
+                "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "lichcongtac-1.0.0.war",
+                "slack-notify": "#deploy-api-lichcongtac"
+            },
+            "notify": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
+                "running-folder": "/etc/tomcat/api-notify/webapps",
+                "deploy-folder-suffix": "api-notify/notify-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "notifyapi-1.0.0.war",
+                "slack-notify": "#deploy-api-notify"
+            },
+            "trao-doi-noi-bo": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
+                "running-folder": "/etc/tomcat/api-traodoinoibo/webapps",
+                "deploy-folder-suffix": "api-traodoinoibo/traodoinoibo-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "traodoinoibo-1.0.0.war",
+                "slack-notify": "#deploy-api-traodoinoibo"
             }
         }
     },
