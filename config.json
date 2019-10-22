@@ -173,6 +173,14 @@
                 "send-file-folder": "target",
                 "original-name-package": "traodoinoibo-1.0.0.war",
                 "slack-notify": "#deploy-api-traodoinoibo"
+            },
+            "authentication": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
+                "deploy-folder-suffix": "api-authentication/authentication-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "authentication-1.0.0.war",
+                "slack-notify": "#deploy-api-authentication"
             }
         }
     },
@@ -331,6 +339,14 @@
                 "send-file-folder": "target",
                 "original-name-package": "traodoinoibo-1.0.0.war",
                 "slack-notify": "#deploy-api-traodoinoibo"
+            },
+            "authentication": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
+                "deploy-folder-suffix": "api-authentication/authentication-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "authentication-1.0.0.war",
+                "slack-notify": "#deploy-api-authentication"
             }
         }
     },
@@ -471,6 +487,14 @@
                 "send-file-folder": "target",
                 "original-name-package": "traodoinoibo-1.0.0.war",
                 "slack-notify": "#deploy-api-traodoinoibo"
+            },
+            "authentication": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
+                "running-folder": "/media/hdd/tomcat-api-authentication",
+                "deploy-folder-suffix": "api-authentication/authentication-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "authentication-1.0.0.war",
+                "slack-notify": "#deploy-api-authentication"
             }
         }
     }
