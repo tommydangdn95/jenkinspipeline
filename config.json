@@ -176,7 +176,7 @@
             },
             "authentication": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
-                "running-folder": "/etc/tomcat/api-authentication/webapps",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
                 "deploy-folder-suffix": "api-authentication/authentication-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "authentication-1.0.0.war",
@@ -342,7 +342,7 @@
             },
             "authentication": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
-                "running-folder": "/etc/tomcat/api-authentication/webapps",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
                 "deploy-folder-suffix": "api-authentication/authentication-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "authentication-1.0.0.war",
