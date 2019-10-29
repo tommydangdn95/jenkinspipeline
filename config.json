@@ -100,7 +100,7 @@
                 "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "vanbandi-1.0.0.war",
-                "slack-notify": "#deploy-api-vanbadi"
+                "slack-notify": "#deploy-api-vanbandi"
             },
             "ho-so-cong-viec": {
                 "user-db": "hosocongviec",
@@ -266,7 +266,7 @@
                 "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "vanbandi-1.0.0.war",
-                "slack-notify": "#deploy-api-vanbadi"
+                "slack-notify": "#deploy-api-vanbandi"
             },
             "ho-so-cong-viec": {
                 "user-db": "hosocongviec",
