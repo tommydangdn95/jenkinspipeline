@@ -51,6 +51,6 @@ feign:
       gateway: api-qoffice-staging.quangnam.gov.vn
       
 wso2:
-  server: api-qoffice-staging.quangnam.gov.vn/admin
+  server: https://api-qoffice-staging.quangnam.gov.vn/admin
   check-user: ${wso2.server}/isExistingUser?userName=
   update-password: ${wso2.server}/updateCredential
