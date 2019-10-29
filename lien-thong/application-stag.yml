@@ -74,4 +74,4 @@ tcx:
 feign:
   client:
     location:
-      gateway: api-qoffice-staging.quangnam.gov.vn
+      gateway: https://api-qoffice-staging.quangnam.gov.vn
