@@ -74,7 +74,7 @@ tcx:
 feign:
   client:
     location: 
-      gateway: http://api-qoffice-staging.quangnam.gov.vn
+      gateway: api-qoffice-staging.quangnam.gov.vn
 
-wso2.check-user: http://api-qoffice-staging.quangnam.gov.vn/admin/isExistingUser?userName=
+wso2.check-user: api-qoffice-staging.quangnam.gov.vn/admin/isExistingUser?userName=
       
