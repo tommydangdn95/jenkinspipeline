@@ -48,9 +48,9 @@ tcx:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location:
-      gateway: http://api-qoffice-staging.quangnam.gov.vn
+      gateway: api-qoffice-staging.quangnam.gov.vn
       
 wso2:
-  server: http://api-qoffice-staging.quangnam.gov.vn/admin
+  server: api-qoffice-staging.quangnam.gov.vn/admin
   check-user: ${wso2.server}/isExistingUser?userName=
   update-password: ${wso2.server}/updateCredential
