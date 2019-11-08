@@ -29,7 +29,7 @@ spring:
       #hibernate.cache.hazelcast.use_lite_member: true
 
 security:
-  byPassApiSecure: false
+  # byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-stag
     client: # SP eoffice-stag
