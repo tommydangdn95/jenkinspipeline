@@ -60,7 +60,7 @@ spring:
         timeZoneId: 'UTC+7'
 
 security:
-  byPassApiSecure: false
+  #byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-live
     client:
