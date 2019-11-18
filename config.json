@@ -387,7 +387,8 @@
             "fe": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fe.git",
                 "running-folder": "/media/hdd/nginx/nginx-dev/www",
-                "deploy-folder-suffix": "fe-deploy",
+                "deploy-folder-name": "fe-react",
+                "deploy-folder-suffix": "fe-react/fe-deploy",
                 "send-file-folder": "build",
                 "command-restart": "kubectl replace --force -f /home/eoffqn/eoffice-qn-sysconfig/nginx/dev-test/nginx-dev/nginx-dev-dp.yml",
                 "slack-notify": "#build-fe"
@@ -395,6 +396,7 @@
             "he-thong": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-users.git",
                 "running-folder": "/media/hdd/tomcat-api-user",
+                "deploy-folder-name": "api-hethong",
                 "deploy-folder-suffix": "api-hethong/hethong-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "hethong-1.0.0.war",
@@ -403,6 +405,7 @@
             "danh-muc": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-common.git",
                 "running-folder": "/media/hdd/tomcat-api-common",
+                "deploy-folder-name": "api-common",
                 "deploy-folder-suffix": "api-common/common-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "danhmuc-1.0.0.war",
@@ -411,6 +414,7 @@
             "van-ban-den": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
                 "running-folder": "/media/hdd/tomcat-api-vanbanden-dev",
+                "deploy-folder-name": "api-vanbanden",
                 "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "vanbanden-1.0.0.war",
@@ -419,6 +423,7 @@
             "van-ban-di": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
                 "running-folder": "/media/hdd/tomcat-api-vanbandi",
+                "deploy-folder-name": "api-vanbandi",
                 "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "vanbandi-1.0.0.war",
@@ -427,6 +432,7 @@
             "ho-so-cong-viec": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-hosocongviec.git",
                 "running-folder": "/media/hdd/tomcat-api-hosocongviec-dev",
+                "deploy-folder-name": "api-hosocongviec",
                 "deploy-folder-suffix": "api-hosocongviec/hosocongviec-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "eoffice-qn-api-hosocongviec-1.0.0.war",
@@ -435,6 +441,7 @@
             "lien-thong": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lienthong.git",
                 "running-folder": "/media/hdd/tomcat-api-lienthong-dev",
+                "deploy-folder-name": "api-lienthong",
                 "deploy-folder-suffix": "api-lienthong/lienthong-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "eoffice-qn-api-lienthong-1.0.0.war",
@@ -443,6 +450,7 @@
             "phieu-yeu-cau": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieuyeucau.git",
                 "running-folder": "/media/hdd/tomcat-api-phieuyeucau-dev",
+                "deploy-folder-name": "api-phieuyeucau",
                 "deploy-folder-suffix": "api-phieuyeucau/phieuyeucau-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "phieuyeucau-1.0.0.war",
@@ -451,6 +459,7 @@
             "phieu-de-xuat": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieudexuat.git",
                 "running-folder": "/media/hdd/tomcat-api-phieudexuat-dev",
+                "deploy-folder-name": "api-phieudexuat",
                 "deploy-folder-suffix": "api-phieudexuat/phieudexuat-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "phieudexuat-1.0.0.war",
@@ -459,6 +468,7 @@
             "migrated": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-dulieucu.git",
                 "running-folder": "/media/hdd/tomcat-api-dulieucu-dev",
+                "deploy-folder-name": "api-dulieucu",
                 "deploy-folder-suffix": "api-dulieucu/dulieucu-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "dulieucu-1.0.0.war",
@@ -467,6 +477,7 @@
             "lich-cong-tac": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
                 "running-folder": "/media/hdd/tomcat-api-lichcongtac",
+                "deploy-folder-name": "api-lichcongtac",
                 "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "lichcongtac-1.0.0.war",
@@ -475,6 +486,7 @@
             "notify": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
                 "running-folder": "/media/hdd/tomcat-api-notify",
+                "deploy-folder-name": "api-notify",
                 "deploy-folder-suffix": "api-notify/notify-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "notifyapi-1.0.0.war",
@@ -483,6 +495,7 @@
             "trao-doi-noi-bo": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
                 "running-folder": "/media/hdd/tomcat-api-traodoinoibo",
+                "deploy-folder-name": "api-traodoinoibo",
                 "deploy-folder-suffix": "api-traodoinoibo/traodoinoibo-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "traodoinoibo-1.0.0.war",
@@ -491,6 +504,7 @@
             "authentication": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
                 "running-folder": "/media/hdd/tomcat-api-authentication",
+                "deploy-folder-name": "api-authentication",
                 "deploy-folder-suffix": "api-authentication/authentication-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "authentication-1.0.0.war",
