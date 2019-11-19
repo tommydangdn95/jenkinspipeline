@@ -54,7 +54,7 @@ spring:
         timeout: 60
 
 security:
-  #byPassApiSecure: false
+  byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-live
     client: # SP eoffice-stag
