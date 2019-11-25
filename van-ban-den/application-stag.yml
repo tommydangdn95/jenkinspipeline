@@ -10,7 +10,7 @@
 # ===================================================================
 logging:
    level:
-     org.hibernate: DEBUG
+     org.hibernate: WARN
      com.zaxxer.hikari: DEBUG
 
 spring:
