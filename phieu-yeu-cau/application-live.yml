@@ -76,5 +76,5 @@ tcx:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location:
-      gateway: http://api-qoffice.quangnam.gov.vn
-      file.url: http://file-qoffice.quangnam.gov.vn/api
+      gateway: https://api-qoffice.quangnam.gov.vn
+      file.url: https://file-qoffice.quangnam.gov.vn/api

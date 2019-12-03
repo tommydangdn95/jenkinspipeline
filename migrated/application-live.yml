@@ -79,7 +79,7 @@ tcx:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location: 
-      gateway: http://api-qoffice.quangnam.gov.vn
+      gateway: https://api-qoffice.quangnam.gov.vn
       danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
       he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
       ho-so-cong-viec.url: ${feign.client.location.gateway}/ho-so-cong-viec/api/client
@@ -89,6 +89,6 @@ feign:
       van-ban-den.url: ${feign.client.location.gateway}/van-ban-den/api/client
       #http://localhost:8083/api/client 
       #${feign.client.location.gateway}/van-ban-den/api/client
-      file.url: http://file-qoffice.quangnam.gov.vn
+      file.url: https://file-qoffice.quangnam.gov.vn
       lien-thong.url: ${feign.client.location.gateway}/lien-thong/api
       phieu-yeu-cau.url: ${feign.client.location.gateway}/phieu-yeu-cau/api/client
