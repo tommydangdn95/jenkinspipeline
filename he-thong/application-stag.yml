@@ -74,7 +74,10 @@ tcx:
 feign:
   client:
     location: 
-      gateway: https://api-qoffice-staging.quangnam.gov.vn
+      # gateway: https://api-qoffice-staging.quangnam.gov.vn
+      gateway: http://10.255.25.11
+      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
 
 wso2.check-user: https://api-qoffice-staging.quangnam.gov.vn/admin/isExistingUser?userName=
       

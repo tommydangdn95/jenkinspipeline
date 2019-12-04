@@ -68,8 +68,16 @@ security:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location: 
-      gateway: https://api-qoffice-staging.quangnam.gov.vn
-      file.url: file-qoffice-staging.quangnam.gov.vn/api
+      # gateway: https://api-qoffice-staging.quangnam.gov.vn
+      # file.url: file-qoffice-staging.quangnam.gov.vn/api
+      gateway: http://10.255.25.11
+      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
+      van-ban-den.url: ${feign.client.location.gateway}:8082/van-ban-den/api/client
+      file.url: ${feign.client.location.gateway}:5000/api
+      van-ban-di.url: ${feign.client.location.gateway}:8083/van-ban-di/api/client
+      phieu-yeu-cau.url: ${feign.client.location.gateway}:8087/phieu-yeu-cau/api/client
+      phieu-de-xuat.url: ${feign.client.location.gateway}:8088/phieu-de-xuat/api/client
       
 tcx:
     errbit:
