@@ -47,47 +47,47 @@
         },
         "stag" : {
             "database" : {
-                "url": "jdbc:oracle:thin:@10.255.45.15:1521:xe"
+                "url": "jdbc:oracle:thin:@10.255.45.30:1521:xe"
              },
              "he-thong" : {
                  "username": "uaa",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "danh-muc" : {
                  "username": "common",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "van-ban-den" : {
                  "username": "vanbanden",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "van-ban-di" : {
                  "username": "vanbandi",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "ho-so-cong-viec" : {
                  "username": "hosocongviec",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "lien-thong" : {
                  "username": "lienthong",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "phieu-yeu-cau" : {
                  "username": "phieuyeucau",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "phieu-de-xuat" : {
                  "username": "phieudexuat",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "trao-doi-noi-bo" : {
                  "username": "traodoinoibo",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              },
              "notify" : {
                  "username": "notify",
-                 "password": "Eoffqn12345"
+                 "password": "Eoffqn1234"
              }
         }
     }
