@@ -186,7 +186,7 @@
     },
     "stag": {
         "database": {
-            "url": "jdbc:oracle:thin:@10.255.45.15:1521:xe"
+            "url": "jdbc:oracle:thin:@10.255.45.30:1521:xe"
         },
         "credentialsId": "jenkins",
         "credentialsIdSv": "ssh-eoffqn",
@@ -230,7 +230,7 @@
             },
             "he-thong": {
                 "user-db": "uaa",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-users.git",
                 "running-folder": "/etc/tomcat/api-user/webapps",
                 "deploy-folder-suffix": "api-hethong/hethong-deploy",
@@ -240,7 +240,7 @@
             },
             "danh-muc": {
                 "user-db": "common",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-common.git",
                 "running-folder": "/etc/tomcat/api-common/webapps",
                 "deploy-folder-suffix": "api-common/common-deploy",
@@ -250,7 +250,7 @@
             },
             "van-ban-den": {
                 "user-db": "vanbanden",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
                 "running-folder": "/etc/tomcat/api-vanbanden/webapps",
                 "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
@@ -260,7 +260,7 @@
             },
             "van-ban-di": {
                 "user-db": "vanbandi",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
                 "running-folder": "/etc/tomcat/api-vanbandi/webapps",
                 "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
@@ -270,7 +270,7 @@
             },
             "ho-so-cong-viec": {
                 "user-db": "hosocongviec",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-hosocongviec.git",
                 "running-folder": "/etc/tomcat/api-hosocongviec/webapps",
                 "deploy-folder-suffix": "api-hosocongviec/hosocongviec-deploy",
@@ -280,7 +280,7 @@
             },
             "lien-thong": {
                 "user-db": "lienthong",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lienthong.git",
                 "running-folder": "/etc/tomcat/api-lienthong/webapps",
                 "deploy-folder-suffix": "api-lienthong/lienthong-deploy",
@@ -290,7 +290,7 @@
             },
             "phieu-yeu-cau": {
                 "user-db": "phieuyeucau",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieuyeucau.git",
                 "running-folder": "/etc/tomcat/api-phieuyeucau/webapps",
                 "deploy-folder-suffix": "api-phieuyeucau/phieuyeucau-deploy",
@@ -300,7 +300,7 @@
             },
             "phieu-de-xuat": {
                 "user-db": "phieudexuat",
-                "password-db": "Eoffqn12345",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieudexuat.git",
                 "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
                 "deploy-folder-suffix": "api-phieudexuat/phieudexuat-deploy",
