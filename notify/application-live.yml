@@ -1,0 +1,80 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+spring:
+  profiles:
+      active: live
+        #include:
+        #    - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+  devtools:
+    restart:
+      enabled: true
+  liquibase:
+    enabled: false
+    change-log: classpath:/migrations/master.xml
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:oracle:thin:@10.255.45.12:1521:xe
+    username: notify
+    password: Eoffqn1234
+    hikari:
+      driver-class-name: oracle.jdbc.OracleDriver
+      poolName: notify-pool
+      auto-commit: false
+  kafka:
+    consumer:
+      bootstrap-servers: 10.255.35.20:9092
+      group-id: group_id
+      topics: notifications-live
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: vn.greenglobal.stream.NotificationDeserializer
+  jpa:
+    hibernate:
+      ddl-auto: none
+    # database-platform: org.hibernate.dialect.Oracle12cDialect
+    # database: ORACLE
+    show-sql: false
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+      #hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
+      #hibernate.cache.hazelcast.instance_name: common
+      #hibernate.cache.use_minimal_puts: true
+      #hibernate.cache.hazelcast.use_lite_member: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+
+security:
+  byPassApiSecure: false
+  oauth2:
+    spGroup: Application/eoffice-live
+    client: # SP eoffice-live
+      clientId: eqaR_x5qvVawWeKyfH8ZEVZ8utUa
+      clientSecret: q5atJMH8QpHc0PWyQbsyPfsDpvwa
+    resource:
+      user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
+      
+tcx:
+  errbit:
+    host: http://10.255.35.21:8088/notifier_api/v2/notices
+    id: 1
+    key: 2f08ff0565b044483f4cd53a57e6f0dd
+    env: dev
+app-url: http://qoffice.quangnam.gov.vn
+service-account-file: qoffice-79833-firebase-adminsdk-esnh0-4c74b5fe01.json
