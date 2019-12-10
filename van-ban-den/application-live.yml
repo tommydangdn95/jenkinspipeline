@@ -8,10 +8,10 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-#logging:
-#   level:
-#     org.hibernate: DEBUG
-#     com.zaxxer.hikari: DEBUG
+logging:
+   level:
+     org.hibernate: WARN
+     com.zaxxer.hikari: DEBUG
 
 spring:
   profiles:
