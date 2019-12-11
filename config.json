@@ -159,6 +159,8 @@
                 "slack-notify": "#deploy-api-lichcongtac"
             },
             "notify": {
+                "user-db": "notify",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
                 "running-folder": "/etc/tomcat/api-notify/webapps",
                 "deploy-folder-suffix": "api-notify/notify-deploy",
@@ -325,6 +327,8 @@
                 "slack-notify": "#deploy-api-lichcongtac"
             },
             "notify": {
+                "user-db": "notify",
+                "password-db": "Eoffqn1234",
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
                 "running-folder": "/etc/tomcat/api-notify/webapps",
                 "deploy-folder-suffix": "api-notify/notify-deploy",
