@@ -15,6 +15,12 @@ spring:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
+    kafka:
+      producer:
+        topics: notifications-live
+        bootstrap-servers: 10.255.35.20:9092
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: vn.tcx.eoffice.hosocongviec.stream.NotificationSerializer
     liquibase:
         enabled: false
         change-log: classpath:/migrations/master.xml
