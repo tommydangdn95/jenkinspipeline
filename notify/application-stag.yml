@@ -74,7 +74,7 @@ tcx:
   errbit:
     host: http://10.255.35.21:8088/notifier_api/v2/notices
     id: 1
-    key: 2f08ff0565b044483f4cd53a57e6f0dd
-    env: dev
+    key: 6a69badc6973de541e408917258b5992
+    env: stag
 app-url: http://qoffice-staging.quangnam.gov.vn
 service-account-file: qoffice-79833-firebase-adminsdk-esnh0-4c74b5fe01.json
