@@ -8,7 +8,7 @@
         "finish":"em deploy xong rồi nhé mn @channel"
     },
     "live": {
-        "channel-member": "deploy-live",
+        "channel-member": "#deploy-live",
         "database": {
             "url": "jdbc:oracle:thin:@10.255.45.12:1521:xe"
         },
@@ -194,7 +194,7 @@
         }
     },
     "stag": {
-        "channel-member": "deploy-staging",
+        "channel-member": "#deploy-staging",
         "database": {
             "url": "jdbc:oracle:thin:@10.255.45.30:1521:xe"
         },
