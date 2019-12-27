@@ -4,8 +4,8 @@
         "bcc": "jenkinscigg@gmail.com, cedricjgreen@my.smccd.edu"
     },
     "channel-message": {
-        "start": "em deploy nhé mn @channel",
-        "finish":"em deploy xong rồi nhé mn @channel"
+        "start": "em deploy nhe mn @channel",
+        "finish":"em deploy xong roi nhe mn @channel"
     },
     "live": {
         "channel-member": "#deploy-live",
