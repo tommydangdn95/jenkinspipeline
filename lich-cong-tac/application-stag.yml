@@ -8,11 +8,6 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-logging:
-   level:
-     org.hibernate: WARN
-     com.zaxxer.hikari: DEBUG
-
 spring:
   profiles:
       active: stag
@@ -20,23 +15,23 @@ spring:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
-  kafka:
-    producer:
-      topics: notifications-stag
-      bootstrap-servers: 10.255.35.20:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: vn.tcx.eoffice.vanbanden.stream.NotificationSerializer
   liquibase:
     enabled: false
     change-log: classpath:/migrations/master.xml
+  kafka:
+    producer:
+        topics: notifications-stag
+        bootstrap-servers: 10.255.35.20:9092
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: vn.tcx.eoffice.lichcongtac.stream.NotificationSerializer
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:oracle:thin:@10.255.45.30:1521:xe
-    username: vanbanden
+    username: lichcongtac
     password: Eoffqn1234
     hikari:
       driver-class-name: oracle.jdbc.OracleDriver
-      poolName: vanbanden-pool
+      poolName: lichcongtac-pool
       auto-commit: false
   jpa:
     show-sql: false
@@ -51,49 +46,41 @@ spring:
       #hibernate.cache.use_minimal_puts: true
       #hibernate.cache.hazelcast.use_lite_member: true
   elasticsearch:
-    search-enabled: true
     rest:
       uris:
       - http://10.255.25.11:9200
       username: elastic
       password: changeme
     index:
-      alias: 'qoffice_staging_vanbanden'
+      alias: 'qoffice_staging_lichcongtac'
       type: 'doc'
       shard: 3
       replica: 2
       from: 0
       size: 10
-      timeout: 2
+      timeout: 60
     time:
       timeZoneId: 'UTC+7'
 
 security:
-  byPassApiSecure: false
+  #byPassApiSecure: false
   oauth2:
     spGroup: Application/eoffice-stag
     client: # SP eoffice-stag
-      clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa 
+      clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
       clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
     resource:
       user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
-      
+
 tcx:
     errbit:
         host: http://10.255.35.21:8088/notifier_api/v2/notices
         id: 1
-        key: a70918dfe47c9df391a1c11ba298135e
+        key: 27d56f9450618e662beef0c9956c808f
         env: stag
 
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
-    location: 
+    location:
       gateway: http://10.255.25.11
-      # url-file: https://file-qoffice-staging.quangnam.gov.vn/api/file/upload
-      # file.url: https://file-qoffice-staging.quangnam.gov.vn/api
-      url-file: ${feign.client.location.gateway}:5000/api/file/upload
       file.url: ${feign.client.location.gateway}:5000/api
-      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
-      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
-      truc-lien-thong.url: ${feign.client.location.gateway}:8085/lien-thong/api
-      van-ban-di.url: ${feign.client.location.gateway}:8083/van-ban-di/api/client
