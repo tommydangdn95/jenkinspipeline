@@ -355,6 +355,7 @@
         }
     },
     "dev": {
+        "timeout": 120,
         "credentialsId": "jenkins",
         "credentialsIdSv": "eoffqn-jenkins-server",
         "servers": [
