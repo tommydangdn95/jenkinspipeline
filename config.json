@@ -404,7 +404,8 @@
                 "deploy-folder-suffix": "api-hethong/hethong-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "hethong-1.0.0.war",
-                "slack-notify": "#deploy-api-user"
+                "slack-notify": "#deploy-api-user",
+                "port": "30003"
             },
             "danh-muc": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-common.git",
@@ -413,7 +414,8 @@
                 "deploy-folder-suffix": "api-common/common-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "danhmuc-1.0.0.war",
-                "slack-notify": "#deploy-api-common"
+                "slack-notify": "#deploy-api-common",
+                "port": "30004"
             },
             "van-ban-den": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
@@ -422,7 +424,8 @@
                 "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "vanbanden-1.0.0.war",
-                "slack-notify": "#deploy-api-vanbanden"
+                "slack-notify": "#deploy-api-vanbanden",
+                "port": "30020"
             },
             "van-ban-di": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
@@ -431,7 +434,8 @@
                 "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "vanbandi-1.0.0.war",
-                "slack-notify": "#deploy-api-vanbandi"
+                "slack-notify": "#deploy-api-vanbandi",
+                "port": "30026"
             },
             "ho-so-cong-viec": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-hosocongviec.git",
@@ -440,7 +444,8 @@
                 "deploy-folder-suffix": "api-hosocongviec/hosocongviec-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "eoffice-qn-api-hosocongviec-1.0.0.war",
-                "slack-notify": "#deploy-api-hscv"
+                "slack-notify": "#deploy-api-hscv",
+                "port": "30022"
             },
             "lien-thong": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lienthong.git",
@@ -449,7 +454,8 @@
                 "deploy-folder-suffix": "api-lienthong/lienthong-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "eoffice-qn-api-lienthong-1.0.0.war",
-                "slack-notify": "#deploy-api-lienthong"
+                "slack-notify": "#deploy-api-lienthong",
+                "port": "30039"
             },
             "phieu-yeu-cau": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieuyeucau.git",
@@ -458,7 +464,8 @@
                 "deploy-folder-suffix": "api-phieuyeucau/phieuyeucau-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "phieuyeucau-1.0.0.war",
-                "slack-notify": "#deploy-api-phyeucau"
+                "slack-notify": "#deploy-api-phyeucau",
+                "port": "30102"
             },
             "phieu-de-xuat": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieudexuat.git",
@@ -467,7 +474,8 @@
                 "deploy-folder-suffix": "api-phieudexuat/phieudexuat-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "phieudexuat-1.0.0.war",
-                "slack-notify": "#deploy-api-phdexuat"
+                "slack-notify": "#deploy-api-phdexuat",
+                "port": "30101"
             },
             "migrated": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-dulieucu.git",
@@ -476,7 +484,8 @@
                 "deploy-folder-suffix": "api-dulieucu/dulieucu-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "dulieucu-1.0.0.war",
-                "slack-notify": "#deploy-api-dulieucu"
+                "slack-notify": "#deploy-api-dulieucu",
+                "port": "30201"
             },
             "lich-cong-tac": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
@@ -485,7 +494,8 @@
                 "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "lichcongtac-1.0.0.war",
-                "slack-notify": "#deploy-api-lichcongtac"
+                "slack-notify": "#deploy-api-lichcongtac",
+                "port": "30202"
             },
             "notify": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
@@ -494,7 +504,8 @@
                 "deploy-folder-suffix": "api-notify/notify-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "notifyapi-1.0.0.war",
-                "slack-notify": "#deploy-api-notify"
+                "slack-notify": "#deploy-api-notify",
+                "port": "30019"
             },
             "trao-doi-noi-bo": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
@@ -503,7 +514,8 @@
                 "deploy-folder-suffix": "api-traodoinoibo/traodoinoibo-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "traodoinoibo-1.0.0.war",
-                "slack-notify": "#deploy-api-traodoinoibo"
+                "slack-notify": "#deploy-api-traodoinoibo",
+                "port": "30103"
             },
             "authentication": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
@@ -512,7 +524,8 @@
                 "deploy-folder-suffix": "api-authentication/authentication-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "authentication-1.0.0.war",
-                "slack-notify": "#deploy-api-authentication"
+                "slack-notify": "#deploy-api-authentication",
+                "port": "30204"
             }
         }
     }
