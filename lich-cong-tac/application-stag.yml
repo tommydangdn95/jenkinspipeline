@@ -83,5 +83,11 @@ feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location:
       gateway: http://api-qoffice-staging.quangnam.gov.vn
+      #gateway: http://localhost:8080
+      danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
+      #he-thong.url: http://localhost:8082/api/client
+      #danh-muc.url: http://localhost:8081/api/client
+      ho-so-cong-viec.url: ${feign.client.location.gateway}/ho-so-cong-viec/api/client
       file.url: http://file-qoffice-staging.quangnam.gov.vn/api
       # file.url: ${feign.client.location.gateway}:5000/api
