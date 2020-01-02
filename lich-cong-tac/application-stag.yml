@@ -82,5 +82,6 @@ tcx:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location:
-      gateway: http://10.255.25.11
-      file.url: ${feign.client.location.gateway}:5000/api
+      gateway: http://api-qoffice-staging.quangnam.gov.vn
+      file.url: http://file-qoffice-staging.quangnam.gov.vn/api
+      # file.url: ${feign.client.location.gateway}:5000/api
