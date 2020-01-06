@@ -358,28 +358,39 @@
         "timeout": 120,
         "credentialsId": "jenkins",
         "credentialsIdSv": "eoffqn-jenkins-server",
-        "servers": [
-            {
-                "name": "server218",
-                "host": "192.168.1.218",
-                "allowAnyHosts": "true"
-            },
-            {
-                "name": "server219",
-                "host": "192.168.1.219",
-                "allowAnyHosts": "true"
-            },
-            {
-                "name": "server220",
-                "host": "192.168.1.220",
-                "allowAnyHosts": "true"
-            },
-            {
-                "name": "server233",
-                "host": "192.168.1.233",
-                "allowAnyHosts": "true"
+        "servers": {
+            "groups": {
+                "api-fe": [
+                    {
+                        "name": "server218",
+                        "host": "192.168.1.218",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server219",
+                        "host": "192.168.1.219",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server220",
+                        "host": "192.168.1.220",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server233",
+                        "host": "192.168.1.233",
+                        "allowAnyHosts": "true"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "server124",
+                        "host": "192.168.1.124",
+                        "allowAnyHosts": "true"
+                    }
+                ]
             }
-        ],
+        },
         "job-config-path": {
             "folder-name": "eoffqn-deploy",
             "job-name": "deploy-config"
