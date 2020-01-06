@@ -547,7 +547,7 @@
                 "call-api-file": "dev-job.sh",
                 "call-job-api-file": "job-index/run-dev-job.sh",
                 "restart-api-file": "restart-index.sh",
-                "restart-job-api-folder": "job-restart/run-restart-index.sh",
+                "restart-job-api-file": "job-restart/run-restart-index.sh",
                 "deploy-folder-name": "api-index",
                 "deploy-folder-suffix": "api-index/index-api-deploy",
                 "command-restart": "service index-api restart",
