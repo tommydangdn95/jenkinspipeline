@@ -542,7 +542,7 @@
             },
             "index-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
-                "running-folder": "/home/eoffqn/file-api/eoffice_file_api.dll",
+                "running-folder": "/home/eoffqn/index-api",
                 "job-folder": "/home/eoffqn/job",
                 "call-api-file": "run-dev-job.sh",
                 "call-api-folder": "job-index",
