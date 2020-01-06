@@ -397,7 +397,8 @@
         },
         "deploy-folder": {
             "fe": "/media/hdd/deploy/nginx/",
-            "api": "/media/hdd/deploy/tomcat/"
+            "api": "/media/hdd/deploy/tomcat/",
+            "index": "/media/hdd/deploy/index/"
         },
         "job": {
             "fe": {
