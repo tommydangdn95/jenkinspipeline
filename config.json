@@ -550,6 +550,7 @@
                 "restart-api-folder": "job-restart",
                 "deploy-folder-name": "api-index",
                 "deploy-folder-suffix": "api-index/index-api-deploy",
+                "command-restart": "service index-api restart",
                 "send-file-folder": "out",
                 "slack-notify": "#deploy-api-index"
             },
