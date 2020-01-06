@@ -1,0 +1,43 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Error"
+    }
+  },
+  "AllowedHosts": "*",
+  "VanBanDen": {
+    "IndexName": "qoffice_dev_vanbanden_2019",
+    "DocType": "doc"
+  },
+  "HoSoCongViec": {
+    "IndexName": "qoffice_dev_hosocongviec_2019",
+    "DocType": "doc"
+  },
+  "VanBanDi": {
+    "IndexName": "qoffice_dev_vanbandi_2019",
+    "DocType": "doc"
+  },
+  "CoQuanBanHanh": {
+    "IndexName": "qoffice_dev_coquanbanhanh",
+    "DocType": "doc"
+  },
+  "PhieuYeuCau": {
+    "IndexName": "qoffice_dev_phieuyeucau",
+    "DocType": "doc"
+  },
+  "PhieuDeXuat": {
+    "IndexName": "qoffice_dev_phieudexuat",
+    "DocType": "doc"
+  },
+
+  "Database": {
+    "ElasticSearchUrl": "http://192.168.1.219:9200/",
+    "GraphQlUrl": "http://192.168.1.124:8080/v1alpha1/graphql",
+    "VanBanDen": "vanbanden_dev",
+    "HoSoCongViec": "hosocongviec_dev",
+    "VanBanDi": "vanbandi",
+    "CoQuanBanHanh": "coquanbanhanh",
+    "PhieuYeuCau": "phieuyeucau_dev",
+    "PhieuDeXuat": "phieudexuat_dev"
+  }
+}
