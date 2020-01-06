@@ -538,6 +538,19 @@
                 "original-name-package": "authentication-1.0.0.war",
                 "slack-notify": "#deploy-api-authentication",
                 "port": "30204"
+            },
+            "index-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
+                "running-folder": "/home/eoffqn/file-api/eoffice_file_api.dll",
+                "job-folder": "/home/eoffqn/job",
+                "call-api-file": "run-dev-job.sh",
+                "call-api-folder": "job-index",
+                "restart-api-file": "run-restart-index.sh",
+                "restart-api-folder": "job-restart",
+                "deploy-folder-name": "api-index",
+                "deploy-folder-suffix": "api-index/index-api-deploy",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-index"
             }
         }
     }
