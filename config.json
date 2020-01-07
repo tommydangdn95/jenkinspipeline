@@ -380,6 +380,11 @@
                         "name": "server233",
                         "host": "192.168.1.233",
                         "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server60",
+                        "host": "192.168.1.60",
+                        "allowAnyHosts": "true"
                     }
                 ],
                 "index-files": [
