@@ -158,7 +158,8 @@
                 "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "lichcongtac-1.0.0.war",
-                "slack-notify": "#deploy-api-lichcongtac"
+                "slack-notify": "#deploy-api-lichcongtac",
+                "port": "8086"
             },
             "notify": {
                 "user-db": "notify",
