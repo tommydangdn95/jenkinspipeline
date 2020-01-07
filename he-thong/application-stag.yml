@@ -20,9 +20,9 @@ spring:
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@10.255.45.15:1521:xe
+        url: jdbc:oracle:thin:@10.255.45.30:1521:xe
         username: uaa
-        password: Eoffqn12345
+        password: Eoffqn1234
         hikari:
             poolName: uaa-pool
             auto-commit: false
