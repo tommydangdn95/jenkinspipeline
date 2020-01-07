@@ -375,35 +375,52 @@
         "timeout": 120,
         "credentialsId": "jenkins",
         "credentialsIdSv": "eoffqn-jenkins-server",
-        "servers": [
-            {
-                "name": "server218",
-                "host": "192.168.1.218",
-                "allowAnyHosts": "true"
-            },
-            {
-                "name": "server219",
-                "host": "192.168.1.219",
-                "allowAnyHosts": "true"
-            },
-            {
-                "name": "server220",
-                "host": "192.168.1.220",
-                "allowAnyHosts": "true"
-            },
-            {
-                "name": "server233",
-                "host": "192.168.1.233",
-                "allowAnyHosts": "true"
+        "servers": {
+            "groups": {
+                "api-fe": [
+                    {
+                        "name": "server218",
+                        "host": "192.168.1.218",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server219",
+                        "host": "192.168.1.219",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server220",
+                        "host": "192.168.1.220",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server233",
+                        "host": "192.168.1.233",
+                        "allowAnyHosts": "true"
+                    },
+                    {
+                        "name": "server60",
+                        "host": "192.168.1.60",
+                        "allowAnyHosts": "true"
+                    }
+                ],
+                "index-files": [
+                    {
+                        "name": "server124",
+                        "host": "192.168.1.124",
+                        "allowAnyHosts": "true"
+                    }
+                ]
             }
-        ],
+        },
         "job-config-path": {
             "folder-name": "eoffqn-deploy",
             "job-name": "deploy-config"
         },
         "deploy-folder": {
             "fe": "/media/hdd/deploy/nginx/",
-            "api": "/media/hdd/deploy/tomcat/"
+            "api": "/media/hdd/deploy/tomcat/",
+            "index": "/media/hdd/deploy/index/"
         },
         "job": {
             "fe": {
@@ -544,6 +561,32 @@
                 "original-name-package": "authentication-1.0.0.war",
                 "slack-notify": "#deploy-api-authentication",
                 "port": "30204"
+            },
+            "index-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
+                "running-folder": "/home/eoffqn/index-api",
+                "job-folder": "/home/eoffqn/job",
+                "call-api-file": "dev-job.sh",
+                "call-job-api-file": "run-dev-job.sh",
+                "call-job-api-folder": "job-index",
+                "restart-api-file": "restart-index.sh",
+                "restart-job-api-file": "run-restart-index.sh",
+                "restart-job-api-folder": "job-restart",
+                "deploy-folder-name": "api-index",
+                "deploy-folder-suffix": "api-index/index-api-deploy",
+                "command-restart": "service index-api restart",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-index"
+            },
+            "ky-so": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-kyso.git",
+                "running-folder": "/media/hdd/tomcat-api-kyso",
+                "deploy-folder-name": "api-kyso",
+                "deploy-folder-suffix": "api-kyso/kyso-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "kyso-1.0.0.war",
+                "slack-notify": "#deploy-api-kyso",
+                "port": "30205"
             }
         }
     }
