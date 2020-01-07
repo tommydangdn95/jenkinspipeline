@@ -10,9 +10,9 @@ spring:
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@10.255.45.15:1521:xe
+        url: jdbc:oracle:thin:@10.255.45.30:1521:xe
         username: common
-        password: Eoffqn12345
+        password: Eoffqn1234
         hikari:
             poolName: danhmuc-pool
             auto-commit: false
@@ -63,5 +63,9 @@ tcx:
 feign:
   client:
     location: 
-      gateway: https://api-qoffice-staging.quangnam.gov.vn
+      # gateway: https://api-qoffice-staging.quangnam.gov.vn
+      gateway: http://10.255.25.11
+      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
+      lien-thong.url: ${feign.client.location.gateway}:8085/lien-thong/api
       

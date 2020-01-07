@@ -1,0 +1,42 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Error"
+    }
+  },
+  "AllowedHosts": "*",
+  "VanBanDen": {
+    "IndexName": "qoffice_live_vanbanden",
+    "DocType": "doc"
+  },
+  "HoSoCongViec": {
+    "IndexName": "qoffice_live_hosocongviec",
+    "DocType": "doc"
+  },
+  "VanBanDi": {
+    "IndexName": "qoffice_live_vanbandi",
+    "DocType": "doc"
+  },
+  "CoQuanBanHanh": {
+    "IndexName": "qoffice_live_coquanbanhanh",
+    "DocType": "doc"
+  },
+  "PhieuYeuCau": {
+    "IndexName": "qoffice_live_phieuyeucau",
+    "DocType": "doc"
+  },
+  "PhieuDeXuat": {
+    "IndexName": "qoffice_live_phieudexuat",
+    "DocType": "doc"
+  },
+  "Database": {
+    "ElasticSearchUrl": "http://10.255.25.11:9200/",
+    "GraphQlUrl": "http://10.255.45.13:8080/v1/graphql",
+    "VanBanDen": "vanbanden_oracle_live",
+    "HoSoCongViec": "hosocongviec_oracle_live",
+    "VanBanDi": "vanbandi_oracle_live",
+    "CoQuanBanHanh": "common_oracle_live",
+    "PhieuYeuCau": "phieuyeucau_oracle_live",
+    "PhieuDeXuat": "phieudexuat_oracle_live"
+  }
+}

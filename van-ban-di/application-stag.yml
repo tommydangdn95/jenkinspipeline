@@ -15,14 +15,20 @@ spring:
         #    - swagger
             # Uncomment to activate TLS for the dev profile
             #- tls
+    kafka:
+      producer:
+        topics: notifications-stag
+        bootstrap-servers: 10.255.35.20:9092
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: vn.tcx.eoffice.vanbandi.stream.NotificationSerializer
     liquibase:
         enabled: false
         change-log: classpath:/migrations/master.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@10.255.45.15:1521:xe
+        url: jdbc:oracle:thin:@10.255.45.30:1521:xe
         username: vanbandi
-        password: Eoffqn12345
+        password: Eoffqn1234
         hikari:
             poolName: vanbandi-pool
             auto-commit: false
@@ -74,6 +80,12 @@ tcx:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location: 
-      gateway: https://api-qoffice-staging.quangnam.gov.vn
-      file.url: https://file-qoffice-staging.quangnam.gov.vn
-      
+      # gateway: https://api-qoffice-staging.quangnam.gov.vn
+      # file.url: https://file-qoffice-staging.quangnam.gov.vn
+      gateway: http://10.255.25.11
+      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
+      ho-so-cong-viec.url: ${feign.client.location.gateway}:8084/ho-so-cong-viec/api/client
+      van-ban-den.url: ${feign.client.location.gateway}:8082/van-ban-den/api/client
+      file.url: ${feign.client.location.gateway}:5000
+      lien-thong.url: ${feign.client.location.gateway}:8085/lien-thong/api

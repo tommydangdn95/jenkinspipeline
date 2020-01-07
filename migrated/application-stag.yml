@@ -79,17 +79,17 @@ tcx:
 feign:
   client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
     location: 
-      gateway: https://api-qoffice-staging.quangnam.gov.vn
-      danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
-      he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
-      ho-so-cong-viec.url: ${feign.client.location.gateway}/ho-so-cong-viec/api/client
+      gateway: http://10.255.25.11
+      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
+      ho-so-cong-viec.url: ${feign.client.location.gateway}:8084/ho-so-cong-viec/api/client
       #${feign.client.location.gateway}/ho-so-cong-viec/api/client
       #ho-so-cong-viec.url: localhost:8085/api/client 
       #http://192.168.1.194:8085/api/client 
-      van-ban-den.url: ${feign.client.location.gateway}/van-ban-den/api/client
+      van-ban-den.url: ${feign.client.location.gateway}:8082/van-ban-den/api/client
       #http://localhost:8083/api/client 
       #${feign.client.location.gateway}/van-ban-den/api/client
-      file.url: https://file-qoffice-staging.quangnam.gov.vn
-      lien-thong.url: ${feign.client.location.gateway}/lien-thong/api
-      phieu-yeu-cau.url: ${feign.client.location.gateway}/phieu-yeu-cau/api/client
+      file.url: ${feign.client.location.gateway}:5000
+      lien-thong.url: ${feign.client.location.gateway}:8085/lien-thong/api
+      phieu-yeu-cau.url: ${feign.client.location.gateway}:8087/phieu-yeu-cau/api/client
       
