@@ -43,6 +43,13 @@
                     "host": "10.255.35.25",
                     "allowAnyHosts": "true"
                 }
+            ],
+            "index": [
+                {
+                    "name": "background-1",
+                    "host": "10.255.45.13",
+                    "allowAnyHosts": "true"
+                }
             ]
         },
         "job-config-path": {
@@ -51,7 +58,8 @@
         },
         "deploy-folder": {
             "fe": "/home/TCX/deploy/nginx/",
-            "api": "/home/TCX/deploy/tomcat/"
+            "api": "/home/TCX/deploy/tomcat/",
+            "index": "/media/hdd/deploy/index-api"
         },
         "job": {
             "fe": {
@@ -186,6 +194,19 @@
                 "send-file-folder": "target",
                 "original-name-package": "authentication-1.0.0.war",
                 "slack-notify": "#deploy-api-authentication"
+            },
+            "index-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
+                "running-folder": "/media/src/index-api",
+                "job-folder": "/media/job/",
+                "running-job-file": "run-index-api.sh",
+                "running-job-folder": "index-api",
+                "kill-job-file": "kill-job.sh",
+                "kill-job-folder": "kill-job",
+                "deploy-folder-name": "api-index",
+                "deploy-folder-suffix": "api-index/index-api-deploy",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-index"
             }
         }
     },
@@ -215,6 +236,13 @@
                     "host": "10.255.35.14",
                     "allowAnyHosts": "true"
                 }
+            ],
+            "index": [
+                {
+                    "name": "background-1",
+                    "host": "10.255.45.13",
+                    "allowAnyHosts": "true"
+                }
             ]
         },
         "job-config-path": {
@@ -223,7 +251,8 @@
         },
         "deploy-folder": {
             "fe": "/home/TCX/deploy/nginx/",
-            "api": "/home/TCX/deploy/tomcat/"
+            "api": "/home/TCX/deploy/tomcat/",
+            "index": "/media/hdd/deploy/index-api"
         },
         "job": {
             "fe": {
@@ -369,6 +398,19 @@
                 "original-name-package": "authentication-1.0.0.war",
                 "slack-notify": "#deploy-api-authentication",
                 "port": "8086"
+            },
+            "index-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
+                "running-folder": "/media/src/index-api",
+                "job-folder": "/media/job/",
+                "running-job-file": "run-index-api.sh",
+                "running-job-folder": "index-api",
+                "kill-job-file": "kill-job.sh",
+                "kill-job-folder": "kill-job",
+                "deploy-folder-name": "api-index",
+                "deploy-folder-suffix": "api-index/index-api-deploy",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-index"
             }
         }
     },
@@ -565,17 +607,14 @@
             },
             "index-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
-                "running-folder": "/home/eoffqn/index-api",
-                "job-folder": "/home/eoffqn/job",
-                "call-api-file": "dev-job.sh",
-                "call-job-api-file": "run-dev-job.sh",
-                "call-job-api-folder": "job-index",
-                "restart-api-file": "restart-index.sh",
-                "restart-job-api-file": "run-restart-index.sh",
-                "restart-job-api-folder": "job-restart",
+                "running-folder": "/media/src/index-api",
+                "job-folder": "/media/job/",
+                "running-job-file": "run-index-api.sh",
+                "running-job-folder": "index-api",
+                "kill-job-file": "kill-job.sh",
+                "kill-job-folder": "kill-job",
                 "deploy-folder-name": "api-index",
                 "deploy-folder-suffix": "api-index/index-api-deploy",
-                "command-restart": "service index-api restart",
                 "send-file-folder": "out",
                 "slack-notify": "#deploy-api-index"
             },
