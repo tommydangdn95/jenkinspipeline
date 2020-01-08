@@ -43,6 +43,13 @@
                     "host": "10.255.35.25",
                     "allowAnyHosts": "true"
                 }
+            ],
+            "index": [
+                {
+                    "name": "background-1",
+                    "host": "10.255.45.13",
+                    "allowAnyHosts": "true"
+                }
             ]
         },
         "job-config-path": {
