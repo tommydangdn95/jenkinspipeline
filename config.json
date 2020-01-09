@@ -196,8 +196,8 @@
             },
             "index-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
-                "running-folder": "/media/src/index-api",
-                "job-folder": "/media/job",
+                "running-folder": "/media/qoffice/src/index-api",
+                "job-folder": "/media/qoffice/job",
                 "running-job-file": "job-index-api.sh",
                 "running-job-folder": "index-api",
                 "kill-job-file": "kill-job.sh",
@@ -400,8 +400,8 @@
             },
             "index-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
-                "running-folder": "/media/src/index-api",
-                "job-folder": "/media/job",
+                "running-folder": "/media/qoffice/src/index-api",
+                "job-folder": "/media/qoffice/job",
                 "running-job-file": "job-index-api.sh",
                 "running-job-folder": "index-api",
                 "kill-job-file": "kill-job.sh",
