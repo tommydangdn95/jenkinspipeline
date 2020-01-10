@@ -1,0 +1,42 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+spring:
+    profiles:
+        active: stag
+        #include:
+        #    - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+security:
+  #byPassApiSecure: false
+  oauth2:
+    spGroup: Application/eoffice-stag
+    client:
+      clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
+      clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
+    resource:
+      user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
+      
+tcx:
+    errbit:
+        host: http://10.255.35.21:8088/notifier_api/v2/notices
+        id: 1
+        key: bf4561d0ed15ef6e98babb188e0e7512
+        env: stag
+feign:
+  client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
+    location: 
+      gateway: http://10.255.25.11
+      # file.url: http://file-qoffice-staging.quangnam.gov.vn
+      file.url: ${feign.client.location.gateway}:5000
+      danh-muc.url: ${feign.client.location.gateway}:8081/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}:8080/he-thong/api/client
+      
