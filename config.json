@@ -195,6 +195,14 @@
                 "original-name-package": "authentication-1.0.0.war",
                 "slack-notify": "#deploy-api-authentication"
             },
+            "ky-so": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-kyso.git",
+                "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
+                "deploy-folder-suffix": "api-kyso/kyso-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "kyso-1.0.0.war",
+                "slack-notify": "#deploy-api-kyso"
+            },
             "index-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
                 "running-folder": "/media/qoffice/src/index-api",
@@ -398,6 +406,15 @@
                 "original-name-package": "authentication-1.0.0.war",
                 "slack-notify": "#deploy-api-authentication",
                 "port": "8086"
+            },
+            "ky-so": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-kyso.git",
+                "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
+                "deploy-folder-suffix": "api-kyso/kyso-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "kyso-1.0.0.war",
+                "slack-notify": "#deploy-api-kyso",
+                "port": "8088"
             },
             "index-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",

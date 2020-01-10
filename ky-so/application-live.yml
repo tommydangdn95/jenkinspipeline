@@ -1,0 +1,41 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+spring:
+    profiles:
+        active: live
+        #include:
+        #    - swagger
+            # Uncomment to activate TLS for the dev profile
+            #- tls
+
+security:
+  #byPassApiSecure: false
+  oauth2:
+    spGroup: Application/eoffice-live
+    client:
+      clientId: eqaR_x5qvVawWeKyfH8ZEVZ8utUa
+      clientSecret: q5atJMH8QpHc0PWyQbsyPfsDpvwa
+    resource:
+      user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
+      
+tcx:
+    errbit:
+        host: http://10.255.35.21:8088/notifier_api/v2/notices
+        id: 1
+        key: 389d7cb7ec208d40445ee1011120b06b
+        env: live
+feign:
+  client: #point to [gateway-host]:[gateway-port]/[service-path-defined-in-gateway]
+    location: 
+      gateway: http://api-qoffice.quangnam.gov.vn
+      file.url: http://file-qoffice.quangnam.gov.vn
+      danh-muc.url: ${feign.client.location.gateway}/danh-muc/api/client
+      he-thong.url: ${feign.client.location.gateway}/he-thong/api/client
