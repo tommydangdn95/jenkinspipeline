@@ -84,6 +84,7 @@ feign:
       van-ban-di.url: ${feign.client.location.gateway}:8083/van-ban-di/api/client
       phieu-yeu-cau.url: ${feign.client.location.gateway}:8087/phieu-yeu-cau/api/client
       phieu-de-xuat.url: ${feign.client.location.gateway}:8088/phieu-de-xuat/api/client
+      ky-so.url: ${feign.client.location.gateway}:8094/ky-so/api
       
 tcx:
     errbit:
