@@ -61,7 +61,7 @@
                 "deploy-folder-name": "fe-react",
                 "deploy-folder-suffix": "fe-react/fe-deploy",
                 "send-file-folder": "build",
-                "command-restart": "kubectl replace --force -f /home/eoffqn/eoffice-qn-sysconfig/nginx/dev-test/nginx-dev/nginx-dev-dp.yml",
+                "command-restart": "kubectl replace --force -f /home/eoffqn/eoffice-qn-sysconfig/k8s/nginx/dev-test/nginx-dev/nginx-dev-dp.yml",
                 "slack-notify": "#build-fe"
             },
             "he-thong": {
