@@ -4,6 +4,7 @@
         "bcc": "jenkinscigg@gmail.com, cedricjgreen@my.smccd.edu"
     },
     "live": {
+        "timeout": 120,
         "database": {
             "url": "jdbc:oracle:thin:@10.255.45.12:1521:xe"
         },

@@ -24,6 +24,9 @@
     ],
     "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ]
   },
+  "Office": {
+    "Path": ""
+  },
   "Airbrake": {
     "ProjectId": "1",
     "ProjectKey": "35b24a99032d8d22e029d6a0cd5044f0",
