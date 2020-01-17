@@ -214,6 +214,7 @@
                 "deploy-folder-name": "api-file",
                 "deploy-folder-suffix": "api-file/file-api-deploy",
                 "send-file-folder": "out",
+                "command-restart": "service file-api restart",
                 "slack-notify": "#deploy-api-file"
             },
             "ky-so": {
