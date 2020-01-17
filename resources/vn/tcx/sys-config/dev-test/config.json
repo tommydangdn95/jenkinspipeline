@@ -52,7 +52,8 @@
         "deploy-folder": {
             "fe": "/media/hdd/deploy/nginx/",
             "api": "/media/hdd/deploy/tomcat/",
-            "index": "/media/hdd/deploy/index/"
+            "index": "/media/hdd/deploy/index/",
+            "file": "/media/hdd/deploy/file/"
         },
         "job": {
             "fe": {
@@ -206,6 +207,14 @@
                 "deploy-folder-suffix": "api-index/index-api-deploy",
                 "send-file-folder": "out",
                 "slack-notify": "#deploy-api-index"
+            },
+            "file-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fileapi.git",
+                "running-folder": "/media/src/file-api",
+                "deploy-folder-name": "api-file",
+                "deploy-folder-suffix": "api-file/file-api-deploy",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-file"
             },
             "ky-so": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-kyso.git",
