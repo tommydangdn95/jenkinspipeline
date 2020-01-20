@@ -10,6 +10,11 @@ import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
 
 def call(){
+    /* Global variable */
+    CURRENTSTATE = ''
+    CHANGELOGMESS = ''
+    FAILED_STAGE = ''
+
     def CONFIG = readJsonConfigFile()
     def choiceEnv = CONFIG["jenkins-config"]["env"]
     def defaultBranch = CONFIG["jenkins-config"]["defaultBranch"]
