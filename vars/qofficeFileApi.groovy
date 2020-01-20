@@ -331,6 +331,8 @@ def sendNotify(String buildStatus = 'STARTED', String changelog = "", String fai
     def showLog = ''
     // get readJsonFile Object
     def CONFIG = readJsonConfigFile()
+    def job_name = Parameters.instance.JOB_NAME
+    
     // slack notify
     def notifyChannel = CONFIG["${params.PROFILE}"]["job"]["${job_name}"]["slack-notify"]
 
