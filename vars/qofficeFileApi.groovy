@@ -1,7 +1,5 @@
 // see jenkins manager config in global pipeline libraries to load libraty
-@Library('eofficeqn-shared-libraby@master') _
 import vn.tcx.config.*
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -332,7 +330,7 @@ def sendNotify(String buildStatus = 'STARTED', String changelog = "", String fai
     // get readJsonFile Object
     def CONFIG = readJsonConfigFile()
     def job_name = Parameters.instance.JOB_NAME
-    
+
     // slack notify
     def notifyChannel = CONFIG["${params.PROFILE}"]["job"]["${job_name}"]["slack-notify"]
 
