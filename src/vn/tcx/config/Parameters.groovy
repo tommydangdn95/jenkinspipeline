@@ -3,7 +3,7 @@ package vn.tcx.config
 @Singleton
 class Parameters {
     
-    public String PATH_SYS_GLOBAL_FILE = "vn/tcx/sys-config"
+    public String PATH_SYS_GLOBAL_FILE = "vn/tcx/sys-config/config"
 
     // path file application api tomcat
     public String PATH_SYS_APPLICATION_API = "vn/tcx/application"
