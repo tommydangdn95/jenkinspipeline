@@ -59,8 +59,8 @@ security:
   oauth2:
     spGroup: Application/eoffice-stag
     client: # SP eoffice-stag
-      clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
-      clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
+      clientId: uROswD_htYhaN_Dshpk6sZxr3fEa
+      clientSecret: qRCZbWSphOEBUVCpgQllnJkTHaga
     resource:
       user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
 
