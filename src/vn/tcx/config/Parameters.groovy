@@ -2,12 +2,29 @@ package vn.tcx.config
 
 @Singleton
 class Parameters {
+    
+    public String PATH_SYS_GLOBAL_FILE = "vn/tcx/sys-config"
+
+    // path file application api tomcat
+    public String PATH_SYS_APPLICATION_API = "vn/tcx/application"
 
     // path config json dev
     public String PATH_SYS_CONFIG_DEV = "vn/tcx/sys-config/dev-test/config.json"
 
     // path config json stag
     public String PATH_SYS_CONFIG_STAG_LIVE = "vn/tcx/sys-config/stag-live/config.json"
+
+    // path file config file api
+    public String PATH_SYS_APPSETTING_FILE_API = "vn/tcx/file-api/app"
+
+    // set app env
+    public String APP_ENV;
+
+    // set common name 
+    public String COMMON_NAME;
+
+    // set job name 
+    public String JOB_NAME;
 
     // common name to get common config api. see in config.json
     public String commonName;

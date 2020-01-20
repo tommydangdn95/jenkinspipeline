@@ -1,0 +1,447 @@
+{
+    "email": {
+        "cc": "dtranthuy1995@gmail.com",
+        "bcc": "jenkinscigg@gmail.com, cedricjgreen@my.smccd.edu"
+    },
+    "live": {
+        "timeout": 120,
+        "database": {
+            "url": "jdbc:oracle:thin:@10.255.45.12:1521:xe"
+        },
+        "credentialsId": "jenkins",
+        "credentialsIdSv": "ssh-eoffqn",
+        "servers": {
+            "fe": [
+                {
+                    "name": "web-stag1",
+                    "host": "10.255.35.13",
+                    "allowAnyHosts": "true"
+                },
+                {
+                    "name": "web-stag2",
+                    "host": "10.255.35.23",
+                    "allowAnyHosts": "true"
+                }
+            ],
+            "api": [
+                {
+                    "name": "api-live1",
+                    "host": "10.255.35.15",
+                    "allowAnyHosts": "true"
+                },
+                {
+                    "name": "api-live2",
+                    "host": "10.255.35.16",
+                    "allowAnyHosts": "true"
+                },
+                {
+                    "name": "api-live3",
+                    "host": "10.255.35.24",
+                    "allowAnyHosts": "true"
+                },
+                {
+                    "name": "api-live4",
+                    "host": "10.255.35.25",
+                    "allowAnyHosts": "true"
+                }
+            ],
+            "index": [
+                {
+                    "name": "background-1",
+                    "host": "10.255.45.13",
+                    "allowAnyHosts": "true"
+                }
+            ]
+        },
+        "job-config-path": {
+            "folder-name": "eoffqn-deploy",
+            "job-name": "deploy-config"
+        },
+        "deploy-folder": {
+            "fe": "/home/TCX/deploy/nginx/",
+            "api": "/home/TCX/deploy/tomcat/",
+            "index": "/media/hdd/deploy/index-api"
+        },
+        "job": {
+            "fe": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fe.git",
+                "running-folder": "/usr/share/nginx/html",
+                "deploy-folder-suffix": "fe-deploy",
+                "send-file-folder": "build",
+                "command-restart": "service nginx restart",
+                "slack-notify": "#build-fe"
+            },
+            "he-thong": {
+                "user-db": "uaa",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-users.git",
+                "running-folder": "/etc/tomcat/api-user/webapps",
+                "deploy-folder-suffix": "api-hethong/hethong-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "hethong-1.0.0.war",
+                "slack-notify": "#deploy-api-user",
+                "port": "8080"
+            },
+            "danh-muc": {
+                "user-db": "common",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-common.git",
+                "running-folder": "/etc/tomcat/api-common/webapps",
+                "deploy-folder-suffix": "api-common/common-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "danhmuc-1.0.0.war",
+                "slack-notify": "#deploy-api-common",
+                "port": "8081"
+            },
+            "van-ban-den": {
+                "user-db": "vanbanden",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
+                "running-folder": "/etc/tomcat/api-vanbanden/webapps",
+                "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "vanbanden-1.0.0.war",
+                "slack-notify": "#deploy-api-vanbanden",
+                "port": "8082"
+            },
+            "van-ban-di": {
+                "user-db": "vanbandi",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
+                "running-folder": "/etc/tomcat/api-vanbandi/webapps",
+                "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "vanbandi-1.0.0.war",
+                "slack-notify": "#deploy-api-vanbandi",
+                "port": "8083"
+            },
+            "ho-so-cong-viec": {
+                "user-db": "hosocongviec",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-hosocongviec.git",
+                "running-folder": "/etc/tomcat/api-hosocongviec/webapps",
+                "deploy-folder-suffix": "api-hosocongviec/hosocongviec-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "eoffice-qn-api-hosocongviec-1.0.0.war",
+                "slack-notify": "#deploy-api-hscv",
+                "port": "8084"
+            },
+            "lien-thong": {
+                "user-db": "lienthong",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lienthong.git",
+                "running-folder": "/etc/tomcat/api-lienthong/webapps",
+                "deploy-folder-suffix": "api-lienthong/lienthong-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "eoffice-qn-api-lienthong-1.0.0.war",
+                "slack-notify": "#deploy-api-lienthong",
+                "port": "8085"
+            },
+            "phieu-yeu-cau": {
+                "user-db": "phieuyeucau",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieuyeucau.git",
+                "running-folder": "/etc/tomcat/api-phieuyeucau/webapps",
+                "deploy-folder-suffix": "api-phieuyeucau/phieuyeucau-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "phieuyeucau-1.0.0.war",
+                "slack-notify": "#deploy-api-phieuyeucau",
+                "port": "8087"
+            },
+            "phieu-de-xuat": {
+                "user-db": "phieudexuat",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieudexuat.git",
+                "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
+                "deploy-folder-suffix": "api-phieudexuat/phieudexuat-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "phieudexuat-1.0.0.war",
+                "slack-notify": "#deploy-api-phieudexuat",
+                "port": "8088"
+            },
+            "migrated": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-dulieucu.git",
+                "running-folder": "/etc/tomcat/api-dulieucu/webapps",
+                "deploy-folder-suffix": "api-dulieucu/dulieucu-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "dulieucu-1.0.0.war",
+                "slack-notify": "#deploy-api-dulieucu",
+                "port": "8091"
+            },
+            "lich-cong-tac": {
+                "user-db": "lichcongtac",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
+                "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "lichcongtac-1.0.0.war",
+                "slack-notify": "#deploy-api-lichcongtac",
+                "port": "8086"
+            },
+            "notify": {
+                "user-db": "notify",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
+                "running-folder": "/etc/tomcat/api-notify/webapps",
+                "deploy-folder-suffix": "api-notify/notify-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "notifyapi-1.0.0.war",
+                "slack-notify": "#deploy-api-notify",
+                "port": "8089"
+            },
+            "trao-doi-noi-bo": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
+                "running-folder": "/etc/tomcat/api-traodoinoibo/webapps",
+                "deploy-folder-suffix": "api-traodoinoibo/traodoinoibo-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "traodoinoibo-1.0.0.war",
+                "slack-notify": "#deploy-api-traodoinoibo"
+            },
+            "authentication": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
+                "deploy-folder-suffix": "api-authentication/authentication-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "authentication-1.0.0.war",
+                "slack-notify": "#deploy-api-authentication",
+                "port": "8086"
+            },
+            "ky-so": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-kyso.git",
+                "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
+                "deploy-folder-suffix": "api-kyso/kyso-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "kyso-1.0.0.war",
+                "slack-notify": "#deploy-api-kyso",
+                "port": "8088"
+            },
+            "index-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
+                "running-folder": "/media/qoffice/src/index-api",
+                "job-folder": "/media/qoffice/job",
+                "running-job-file": "job-index-api.sh",
+                "running-job-folder": "index-api",
+                "kill-job-file": "kill-job.sh",
+                "kill-job-folder": "kill-job",
+                "deploy-folder-name": "api-index",
+                "deploy-folder-suffix": "api-index/index-api-deploy",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-index"
+            }
+        }
+    },
+    "stag": {
+        "timeout": 120,
+        "database": {
+            "url": "jdbc:oracle:thin:@10.255.45.30:1521:xe"
+        },
+        "credentialsId": "jenkins",
+        "credentialsIdSv": "ssh-eoffqn",
+        "servers": {
+            "fe": [
+                {
+                    "name": "web-stag1",
+                    "host": "10.255.35.13",
+                    "allowAnyHosts": "true"
+                },
+                {
+                    "name": "web-stag2",
+                    "host": "10.255.35.23",
+                    "allowAnyHosts": "true"
+                }
+            ],
+            "api": [
+                {
+                    "name": "api-stag1",
+                    "host": "10.255.35.14",
+                    "allowAnyHosts": "true"
+                }
+            ],
+            "index": [
+                {
+                    "name": "background-1",
+                    "host": "10.255.45.13",
+                    "allowAnyHosts": "true"
+                }
+            ]
+        },
+        "job-config-path": {
+            "folder-name": "eoffqn-deploy",
+            "job-name": "deploy-config"
+        },
+        "deploy-folder": {
+            "fe": "/home/TCX/deploy/nginx/",
+            "api": "/home/TCX/deploy/tomcat/",
+            "index": "/media/hdd/deploy/index-api"
+        },
+        "job": {
+            "fe": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fe.git",
+                "running-folder": "/usr/share/nginx/stag",
+                "deploy-folder-suffix": "fe-deploy",
+                "send-file-folder": "build",
+                "command-restart": "service nginx restart",
+                "slack-notify": "#build-fe"
+            },
+            "he-thong": {
+                "user-db": "uaa",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-users.git",
+                "running-folder": "/etc/tomcat/api-user/webapps",
+                "deploy-folder-suffix": "api-hethong/hethong-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "hethong-1.0.0.war",
+                "slack-notify": "#deploy-api-user",
+                "port": "8080"
+            },
+            "danh-muc": {
+                "user-db": "common",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-common.git",
+                "running-folder": "/etc/tomcat/api-common/webapps",
+                "deploy-folder-suffix": "api-common/common-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "danhmuc-1.0.0.war",
+                "slack-notify": "#deploy-api-common",
+                "port": "8081"
+            },
+            "van-ban-den": {
+                "user-db": "vanbanden",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbanden.git",
+                "running-folder": "/etc/tomcat/api-vanbanden/webapps",
+                "deploy-folder-suffix": "api-vanbanden/vanbanden-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "vanbanden-1.0.0.war",
+                "slack-notify": "#deploy-api-vanbanden",
+                "port": "8082"
+            },
+            "van-ban-di": {
+                "user-db": "vanbandi",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-vanbandi.git",
+                "running-folder": "/etc/tomcat/api-vanbandi/webapps",
+                "deploy-folder-suffix": "api-vanbandi/vanbandi-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "vanbandi-1.0.0.war",
+                "slack-notify": "#deploy-api-vanbandi",
+                "port": "8083"
+            },
+            "ho-so-cong-viec": {
+                "user-db": "hosocongviec",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-hosocongviec.git",
+                "running-folder": "/etc/tomcat/api-hosocongviec/webapps",
+                "deploy-folder-suffix": "api-hosocongviec/hosocongviec-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "eoffice-qn-api-hosocongviec-1.0.0.war",
+                "slack-notify": "#deploy-api-hscv",
+                "port": "8084"
+            },
+            "lien-thong": {
+                "user-db": "lienthong",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lienthong.git",
+                "running-folder": "/etc/tomcat/api-lienthong/webapps",
+                "deploy-folder-suffix": "api-lienthong/lienthong-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "eoffice-qn-api-lienthong-1.0.0.war",
+                "slack-notify": "#deploy-api-lienthong",
+                "port": "8085"
+            },
+            "phieu-yeu-cau": {
+                "user-db": "phieuyeucau",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieuyeucau.git",
+                "running-folder": "/etc/tomcat/api-phieuyeucau/webapps",
+                "deploy-folder-suffix": "api-phieuyeucau/phieuyeucau-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "phieuyeucau-1.0.0.war",
+                "slack-notify": "#deploy-api-phieuyeucau",
+                "port": "8087"
+            },
+            "phieu-de-xuat": {
+                "user-db": "phieudexuat",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-phieudexuat.git",
+                "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
+                "deploy-folder-suffix": "api-phieudexuat/phieudexuat-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "phieudexuat-1.0.0.war",
+                "slack-notify": "#deploy-api-phieudexuat",
+                "port": "8088"
+            },
+            "migrated": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-dulieucu.git",
+                "running-folder": "/etc/tomcat/api-dulieucu/webapps",
+                "deploy-folder-suffix": "api-dulieucu/dulieucu-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "dulieucu-1.0.0.war",
+                "slack-notify": "#deploy-api-dulieucu",
+                "port": "8091"
+            },
+            "lich-cong-tac": {
+                "user-db": "lichcongtac",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-lichcongtac.git",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
+                "deploy-folder-suffix": "api-lichcongtac/lichcongtac-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "lichcongtac-1.0.0.war",
+                "slack-notify": "#deploy-api-lichcongtac",
+                "port": "8086"
+            },
+            "notify": {
+                "user-db": "notify",
+                "password-db": "Eoffqn1234",
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-notifyapi.git",
+                "running-folder": "/etc/tomcat/api-notify/webapps",
+                "deploy-folder-suffix": "api-notify/notify-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "notifyapi-1.0.0.war",
+                "slack-notify": "#deploy-api-notify",
+                "port": "8089"
+            },
+            "trao-doi-noi-bo": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-traodoinoibo.git",
+                "running-folder": "/etc/tomcat/api-traodoinoibo/webapps",
+                "deploy-folder-suffix": "api-traodoinoibo/traodoinoibo-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "traodoinoibo-1.0.0.war",
+                "slack-notify": "#deploy-api-traodoinoibo"
+            },
+            "authentication": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-authentication.git",
+                "running-folder": "/etc/tomcat/api-admin/webapps",
+                "deploy-folder-suffix": "api-authentication/authentication-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "authentication-1.0.0.war",
+                "slack-notify": "#deploy-api-authentication",
+                "port": "8086"
+            },
+            "ky-so": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-api-kyso.git",
+                "running-folder": "/etc/tomcat/api-phieudexuat/webapps",
+                "deploy-folder-suffix": "api-kyso/kyso-deploy",
+                "send-file-folder": "target",
+                "original-name-package": "kyso-1.0.0.war",
+                "slack-notify": "#deploy-api-kyso",
+                "port": "8088"
+            },
+            "index-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-index.git",
+                "running-folder": "/media/qoffice/src/index-api",
+                "job-folder": "/media/qoffice/job",
+                "running-job-file": "job-index-api.sh",
+                "running-job-folder": "index-api",
+                "kill-job-file": "kill-job.sh",
+                "kill-job-folder": "kill-job",
+                "deploy-folder-name": "api-index",
+                "deploy-folder-suffix": "api-index/index-api-deploy",
+                "send-file-folder": "out",
+                "slack-notify": "#deploy-api-index"
+            }
+        }
+    }
+}
