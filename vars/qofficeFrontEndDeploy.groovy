@@ -288,7 +288,7 @@ def deploySource(){
                 }
                 else{
                     restart_server_tasks["Restart server ${itemServer.name}"] = {
-                        shCommand remote: itemServer, command: "${restart_command}"
+                        sshCommand remote: itemServer, command: "${restart_command}"
                     }
                 }
             }
