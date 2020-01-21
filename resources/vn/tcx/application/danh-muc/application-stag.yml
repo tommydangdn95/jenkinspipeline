@@ -46,10 +46,10 @@ spring:
 security:
   byPassApiSecure: false
   oauth2:
-    spGroup: Application/eoffice-stag-jwt
+    spGroup: Application/eoffice-stag
     client: # SP eoffice-stag
-      clientId: uROswD_htYhaN_Dshpk6sZxr3fEa
-      clientSecret: qRCZbWSphOEBUVCpgQllnJkTHaga
+      clientId: YRNBGL7NOmIuWZklZLQDnmfBvqMa
+      clientSecret: 7bGWOGE8_c1RZs9JNCfINIgQaz8a
     resource:
       user-info-uri: https://sso.lgsp.quangnam.gov.vn/oauth2/userinfo?schema=openid
       
