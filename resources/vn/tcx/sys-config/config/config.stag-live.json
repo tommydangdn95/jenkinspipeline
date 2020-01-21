@@ -465,7 +465,7 @@
             },
             "file-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fileapi.git",
-                "running-folder": "/home/TCX/file-api",
+                "running-folder": "/media/test",
                 "deploy-folder-name": "api-file",
                 "deploy-folder-suffix": "api-file/file-api-deploy",
                 "send-file-folder": "out",
