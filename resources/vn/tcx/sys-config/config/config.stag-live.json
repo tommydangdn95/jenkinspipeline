@@ -249,8 +249,8 @@
                 "send-file-folder": "out",
                 "command-restart": [
                     {"command": "service file-api restart"},
-                    {"command": "service file-api1 restart"},
-                    {"command": "service file-api2 restart"}
+                    {"command": "service file-api2 restart"},
+                    {"command": "service file-api3 restart"}
                 ],
                 "folder-source-code": "src",
                 "solution-name": "Eoffice.File.sln",
