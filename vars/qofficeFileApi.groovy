@@ -301,7 +301,7 @@ def deploySource(){
             FAILED_STAGE = "${STAGE_NAME}"
             for (item in list_server) { 
                 for(itemCommand in restart_command){
-                    sshCommand remote: itemServer, command: "${itemCommand.command}"
+                    sshCommand remote: item, command: "${itemCommand.command}"
                 }
             }
         }
