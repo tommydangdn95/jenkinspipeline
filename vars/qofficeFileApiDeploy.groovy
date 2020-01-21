@@ -290,7 +290,7 @@ def deploySource(){
             for (item in list_server) {
                 def itemServer = item
                 copy_file_tasks["Cp file to main dir in ${itemServer.name}"] = {
-                    sshCommand remote: itemServer, command: "cp -rf ${deploy_folder}/${build_package}/* ${current_folder}/${params.PROFILE}"
+                    sshCommand remote: itemServer, command: "cp -rf ${deploy_folder}/${build_package}/* ${current_folder}"
                 }
             }        
             // parallel copy folder each server
