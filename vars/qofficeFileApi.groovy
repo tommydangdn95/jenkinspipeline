@@ -300,7 +300,9 @@ def deploySource(){
         stage("Restart File Api"){
             FAILED_STAGE = "${STAGE_NAME}"
             for (item in list_server) { 
-                sshCommand remote: item, command: "${restart_command}" 
+                for(itemCommand in restart_command){
+                    sshCommand remote: itemServer, command: "${itemCommand.command}"
+                }
             }
         }
 
@@ -323,10 +325,15 @@ def deploySource(){
                     def publisher = LastChanges.getLastChangesPublisher "LAST_SUCCESSFUL_BUILD", "SIDE", "LINE", true, true, "", "", "", "", ""
                     publisher.publishLastChanges()
                     def changes = publisher.getLastChanges()
+                    def count = 0
                     for (commit in changes.getCommits()) {
+                        if(count >= 10){
+                            break
+                        }
                         def commitInfo = commit.getCommitInfo()
                         echo "${commitInfo.getCommitId()} by ${commitInfo.getCommitterName()} on ${commitInfo.getCommitDate()}: ${commitInfo.getCommitMessage()}"
                         CHANGELOGMESS += "\n *${commitInfo.getCommitterName()}* commited on ${commitInfo.getCommitDate()}: *${commitInfo.getCommitMessage()}*"
+                        count += 1
                     }
                 }
             }
