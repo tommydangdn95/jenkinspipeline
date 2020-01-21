@@ -236,11 +236,15 @@
             },
             "file-api": {
                 "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fileapi.git",
-                "running-folder": "/media/src/file-api",
+                "running-folder": "/home/TCX/file-api",
                 "deploy-folder-name": "api-file",
                 "deploy-folder-suffix": "api-file/file-api-deploy",
                 "send-file-folder": "out",
-                "command-restart": "service file-api restart",
+                "command-restart": [
+                    {"command": "service file-api restart"},
+                    {"command": "service file-api1 restart"},
+                    {"command": "service file-api2 restart"}
+                ],
                 "folder-source-code": "src",
                 "solution-name": "Eoffice.File.sln",
                 "slack-notify": "#deploy-api-file"
@@ -289,7 +293,8 @@
         "deploy-folder": {
             "fe": "/home/TCX/deploy/nginx/",
             "api": "/home/TCX/deploy/tomcat/",
-            "index": "/media/hdd/deploy/index-api"
+            "index": "/media/hdd/deploy/index-api",
+            "file": "/media/hdd/deploy/file/"
         },
         "job": {
             "fe": {
@@ -457,6 +462,21 @@
                 "deploy-folder-suffix": "api-index/index-api-deploy",
                 "send-file-folder": "out",
                 "slack-notify": "#deploy-api-index"
+            },
+            "file-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fileapi.git",
+                "running-folder": "/home/TCX/file-api",
+                "deploy-folder-name": "api-file",
+                "deploy-folder-suffix": "api-file/file-api-deploy",
+                "send-file-folder": "out",
+                "command-restart": [
+                    {"command": "service file-api restart"},
+                    {"command": "service file-api1 restart"},
+                    {"command": "service file-api2 restart"}
+                ],
+                "folder-source-code": "src",
+                "solution-name": "Eoffice.File.sln",
+                "slack-notify": "#deploy-api-file"
             }
         }
     }
