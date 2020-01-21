@@ -1,7 +1,7 @@
 {
     "jenkins-config": {
         "env": ["stag", "live"],
-        "defaultBranch": "develop",
+        "defaultBranch": "master",
     },
     "email": {
         "cc": "dtranthuy1995@gmail.com",
