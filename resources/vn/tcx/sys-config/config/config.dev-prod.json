@@ -250,7 +250,9 @@
                 "deploy-folder-name": "api-file",
                 "deploy-folder-suffix": "api-file/file-api-deploy",
                 "send-file-folder": "out",
-                "command-restart": "service file-api restart",
+                "command-restart": [
+                    {"command": "service file-api restart"}
+                ],
                 "folder-source-code": "src",
                 "solution-name": "Eoffice.File.sln",
                 "slack-notify": "#deploy-api-file"
