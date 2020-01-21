@@ -1,4 +1,8 @@
 {
+    "jenkins-config": {
+        "env": ["stag", "live"],
+        "defaultBranch": "develop",
+    },
     "email": {
         "cc": "dtranthuy1995@gmail.com",
         "bcc": "jenkinscigg@gmail.com, cedricjgreen@my.smccd.edu"
@@ -60,7 +64,8 @@
         "deploy-folder": {
             "fe": "/home/TCX/deploy/nginx/",
             "api": "/home/TCX/deploy/tomcat/",
-            "index": "/media/hdd/deploy/index-api"
+            "index": "/media/hdd/deploy/index-api",
+            "file": "/media/hdd/deploy/file/"
         },
         "job": {
             "fe": {
@@ -228,6 +233,17 @@
                 "deploy-folder-suffix": "api-index/index-api-deploy",
                 "send-file-folder": "out",
                 "slack-notify": "#deploy-api-index"
+            },
+            "file-api": {
+                "git-url": "git@bitbucket.org:toancauxanh/eoffice-qn-fileapi.git",
+                "running-folder": "/media/src/file-api",
+                "deploy-folder-name": "api-file",
+                "deploy-folder-suffix": "api-file/file-api-deploy",
+                "send-file-folder": "out",
+                "command-restart": "service file-api restart",
+                "folder-source-code": "src",
+                "solution-name": "Eoffice.File.sln",
+                "slack-notify": "#deploy-api-file"
             }
         }
     },
