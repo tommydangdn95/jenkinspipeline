@@ -8,7 +8,6 @@ import hudson.model.User;
 import hudson.tasks.Mailer;
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
-
 def call(){
     /* Global variable */
     CURRENTSTATE = ''
@@ -138,18 +137,13 @@ def buildSource(){
     // get solution name
     def solution_name = JOB_CONFIG["solution-name"]
 
-    // credential and gitURl
     def credentialsIdBbk = CONFIG["${params.PROFILE}"]["credentialsId"]
 
     stage('Pull Source Code') {
         FAILED_STAGE = "${STAGE_NAME}"
-        checkout([$class: 'GitSCM', 
-                branches: [[name: "*/${params.BRANCH}"]], 
-                extensions: [[$class: 'SubmoduleOption', 
-                            recursiveSubmodules: true,
-                            trackingSubmodules: true]],
-                userRemoteConfigs: [[credentialsId: "${credentialsIdBbk}", 
-                                     url: "${gitUrl}"]]])
+        git branch: "${params.BRANCH}",
+            credentialsId: "${credentialsIdBbk}",
+            url: "${gitUrl}"
     }
 
     stage("Check folder and Copy file env"){
@@ -168,12 +162,12 @@ def buildSource(){
 
     stage('Restore project') {
         FAILED_STAGE = "${STAGE_NAME}"
-        sh "dotnet restore ${folder_source_code}/${solution_name}"
+        sh "dotnet restore ${solution_name}"
     }
 
     stage('Publish project') {
         FAILED_STAGE = "${STAGE_NAME}"
-        sh "dotnet publish ${folder_source_code}/${solution_name} -c Release -o ${build_package}"
+        sh "dotnet publish ${solution_name} -c Release -o ${build_package}"
     }
 
     stage("Copy build source to tmp folder") {
@@ -183,11 +177,13 @@ def buildSource(){
         sh "mkdir -p ${WORKSPACE}/${tmp_buildSource}"
         sh "cp -rf ${folder_source_code}/${build_package}/* ${tmp_buildSource}"
     }
+
 }
+
 
 /* Deploy Source */
 def deploySource(){
- 
+
     // read file JSON
     def CONFIG = readJsonConfigFile()
 
@@ -202,6 +198,44 @@ def deploySource(){
 
     // restart command
     def restart_command = JOB_CONFIG["command-restart"]
+
+    // job folder
+    def job_folder = JOB_CONFIG["job-folder"]
+
+    
+    /* -------------------------------
+       -------------------------------
+       -------------------------------
+
+        Get Running job file and Folder
+        Combine to Full path
+     */
+
+    // file call api index
+    def running_job_file = JOB_CONFIG["running-job-file"]
+
+    // file call job api index
+    def running_job_folder = JOB_CONFIG["running-job-folder"]
+
+    // full path file call api
+    def full_path_running_job = job_folder +  "/${params.PROFILE}" + "/" + running_job_folder + "/" + running_job_file
+
+    /* -------------------------------
+       -------------------------------
+       -------------------------------
+       
+       Get Kill Job file and Folder
+       Combine To Full Path
+     */
+
+    // file restart api index
+    def kill_job_file = JOB_CONFIG["kill-job-file"]
+
+    // files job restart api index
+    def kill_job_folder = JOB_CONFIG["kill-job-folder"]
+
+    // full path file restart api
+    def full_path_kill_job = job_folder + "/${params.PROFILE}" + "/" + kill_job_folder + "/" + kill_job_file
 
     // get currentTime
     def timeCreateFolder = getCurrentDateTime("dd.MM.yyy")
@@ -285,11 +319,18 @@ def deploySource(){
             for (item in list_server) {
                 def itemServer = item
                 copy_file_tasks["Cp file to main dir in ${itemServer.name}"] = {
-                    sshCommand remote: itemServer, command: "cp -rf ${deploy_folder}/${params.PROFILE}/* ${current_folder}"
+                    sshCommand remote: itemServer, command: "cp -rf ${deploy_folder}/${params.PROFILE}/* ${current_folder}/${params.PROFILE}"
                 }
             }        
             // parallel copy folder each server
             parallel copy_file_tasks
+        }
+
+        stage("Kill All Job Restart And Call Api"){
+            FAILED_STAGE = "${STAGE_NAME}"
+            for (item in list_server) { 
+                sshCommand remote: item, command: "${full_path_kill_job}" 
+            }
         }
 
         stage("Restart File Api"){
@@ -298,6 +339,20 @@ def deploySource(){
                 for(itemCommand in restart_command){
                     sshCommand remote: item, command: "${itemCommand.command}"
                 }
+            }
+        }
+
+        stage("Run Job Restart And Call Api") {
+            FAILED_STAGE = "${STAGE_NAME}"
+            def input_script = 
+            """
+                #!/bin/bash
+                nohup ${full_path_running_job} >/dev/null 2>&1 &
+            """
+            writeFile file: "running-index-api.sh", text: input_script
+
+            for (item in list_server) { 
+                sshScript remote: item, script: "running-index-api.sh"
             }
         }
 
@@ -320,7 +375,6 @@ def deploySource(){
                     def publisher = LastChanges.getLastChangesPublisher "LAST_SUCCESSFUL_BUILD", "SIDE", "LINE", true, true, "", "", "", "", ""
                     publisher.publishLastChanges()
                     def changes = publisher.getLastChanges()
-                    def count = 0
                     for (commit in changes.getCommits()) {
                         if(count >= 10){
                             break
@@ -335,6 +389,7 @@ def deploySource(){
         }
     }
 }
+
 
 // notify slack
 def sendNotify(String buildStatus = 'STARTED', String changelog = "", String failedStage = "") {
@@ -390,7 +445,6 @@ def sendNotify(String buildStatus = 'STARTED', String changelog = "", String fai
     parallel notify_task
 }
 
-
 // send email
 def sendEmail(String buildStatus = "", String showLog = "", String BUILD_USER = "", String timeBuild = "") {
     // read json file
@@ -414,7 +468,6 @@ def sendEmail(String buildStatus = "", String showLog = "", String BUILD_USER = 
     )
 }
 
-
 // read file Json Config
 def readJsonConfigFile() {
     // load file json resource
@@ -426,7 +479,6 @@ def readJsonConfigFile() {
     return jsonFile
 }
 
-
 // get current datetime system Build
 def getCurrentDateTime(String typeFormatDate = "EEEE, MMM d, yyyy, h:mm:ss a") {
     
@@ -436,7 +488,6 @@ def getCurrentDateTime(String typeFormatDate = "EEEE, MMM d, yyyy, h:mm:ss a") {
     def timeFormat = formatDate.format(date)
     return timeFormat
 }
-
 
 // get current build User
 // install plugin user build vars
@@ -451,16 +502,14 @@ def getCurrentUserInfo() {
     return userCurrent
 }
 
-
 // get tmpSourcefolder
 def getTmpBuildSourceFolder() {
     def tmp_folder = "tmp/${params.PROFILE}"
     return tmp_folder
 }
 
-
 def getApplicationFileReousrce() {
-    def path_resource = Parameters.instance.PATH_SYS_APPSETTING_FILE_API + "/appsettings.json.${params.PROFILE}"
+    def path_resource = Parameters.instance.PATH_SYS_APPLICATION_INDEX + "/appsettings.json.${params.PROFILE}"
     def applicationFile =  libraryResource "${path_resource}"
     return applicationFile
 }

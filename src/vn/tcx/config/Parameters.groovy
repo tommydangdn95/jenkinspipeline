@@ -27,8 +27,11 @@ class Parameters {
     // path file application api tomcat
     public String PATH_SYS_APPLICATION_API = "vn/tcx/application"
 
-    // path file application api tomcat
+    // path file enviroment fe
     public String PATH_SYS_ENV_FE = "vn/tcx/fe/enviroment"
+
+    // path file application index api
+    public String PATH_SYS_APPLICATION_INDEX = "vn/tcx/index-api"
     
     /****
     -----------------------------------------------------

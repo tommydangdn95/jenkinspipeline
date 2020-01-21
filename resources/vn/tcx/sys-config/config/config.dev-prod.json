@@ -242,6 +242,11 @@
                 "deploy-folder-name": "api-index",
                 "deploy-folder-suffix": "api-index/index-api-deploy",
                 "send-file-folder": "out",
+                "command-restart": [
+                    {"command": "service index-api restart"}
+                ],
+                "folder-source-code": "eoffice_index_api",
+                "solution-name": "eoffice_index.sln",
                 "slack-notify": "#deploy-api-index"
             },
             "file-api": {
