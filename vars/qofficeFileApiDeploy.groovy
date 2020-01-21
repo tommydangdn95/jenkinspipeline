@@ -206,9 +206,6 @@ def deploySource(){
     // get currentTime
     def timeCreateFolder = getCurrentDateTime("dd.MM.yyy")
 
-        // folder name contain source code
-    def build_package = JOB_CONFIG["send-file-folder"]
-
     // job folder
     def job_folder = JOB_CONFIG["job-folder"]
 
