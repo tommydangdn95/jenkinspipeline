@@ -55,6 +55,13 @@
                     "host": "10.255.45.13",
                     "allowAnyHosts": "true"
                 }
+            ],
+            "file": [
+                {
+                    "name": "file-staging",
+                    "host": "10.255.45.11",
+                    "allowAnyHosts": "true"
+                }
             ]
         },
         "job-config-path": {
@@ -282,6 +289,13 @@
                 {
                     "name": "background-1",
                     "host": "10.255.45.13",
+                    "allowAnyHosts": "true"
+                }
+            ],
+            "file": [
+                {
+                    "name": "file-staging",
+                    "host": "10.255.45.14",
                     "allowAnyHosts": "true"
                 }
             ]
