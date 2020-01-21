@@ -206,9 +206,6 @@ def deploySource(){
     // get currentTime
     def timeCreateFolder = getCurrentDateTime("dd.MM.yyy")
 
-    // job folder
-    def job_folder = JOB_CONFIG["job-folder"]
-
     // define list server
     def list_server = []
 

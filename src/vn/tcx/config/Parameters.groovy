@@ -5,8 +5,7 @@ class Parameters {
     
     public String PATH_SYS_GLOBAL_FILE = "vn/tcx/sys-config/config"
 
-    // path file application api tomcat
-    public String PATH_SYS_APPLICATION_API = "vn/tcx/application"
+    
 
     // path config json dev
     public String PATH_SYS_CONFIG_DEV = "vn/tcx/sys-config/dev-test/config.json"
@@ -14,8 +13,30 @@ class Parameters {
     // path config json stag
     public String PATH_SYS_CONFIG_STAG_LIVE = "vn/tcx/sys-config/stag-live/config.json"
 
+    /****
+    -----------------------------------------------------
+    -----------------------------------------------------
+    PATH APPLICATION FILE SETTING FOR EACH  JOB 
+    -----------------------------------------------------
+    -----------------------------------------------------
+     ***/
+
     // path file config file api
     public String PATH_SYS_APPSETTING_FILE_API = "vn/tcx/file-api/app"
+
+    // path file application api tomcat
+    public String PATH_SYS_APPLICATION_API = "vn/tcx/application"
+
+    // path file application api tomcat
+    public String PATH_SYS_ENV_FE = "vn/tcx/fe/enviroment"
+    
+    /****
+    -----------------------------------------------------
+    -----------------------------------------------------
+    END
+    -----------------------------------------------------
+    -----------------------------------------------------
+     ***/
 
     // set app env
     public String APP_ENV;
