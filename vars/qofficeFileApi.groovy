@@ -132,6 +132,12 @@ def buildSource(){
     // get git url of job build
     def gitUrl = JOB_CONFIG["git-url"]
 
+    // get folder source code
+    def folder_source_code = JOB_CONFIG["folder-source-code"]
+
+    // get solution name
+    def solution_name = JOB_CONFIG["solution-name"]
+
     // credential and gitURl
     def credentialsIdBbk = CONFIG["${params.PROFILE}"]["credentialsId"]
 
