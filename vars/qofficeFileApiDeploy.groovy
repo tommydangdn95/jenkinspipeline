@@ -178,10 +178,11 @@ def buildSource(){
 
     stage("Copy build source to tmp folder") {
         def tmp_buildSource = getTmpBuildSourceFolder()
-        sh "bash -c 'if [ ! -d ${WORKSPACE}/${tmp_buildSource} ]; then mkdir -p ${WORKSPACE}/${tmp_buildSource}; else echo foler exist; fi; '"
-        sh "cp -rf ${folder_source_code}/${build_package} ${tmp_buildSource}"
+        // delete folder tmp
+        sh "rm -rf ${WORKSPACE}/${tmp_buildSource}"
+        sh "mkdir -p ${WORKSPACE}/${tmp_buildSource}"
+        sh "cp -rf ${folder_source_code}/${build_package}/* ${tmp_buildSource}"
     }
-
 }
 
 /* Deploy Source */
@@ -276,7 +277,7 @@ def deploySource(){
             for (item in list_server) {
                 def itemServer = item
                 send_file_tasks["Send file ${itemServer.name}"] = {
-                    sshPut remote: itemServer, from: "${tmp_build_package}/${build_package}", into: "${deploy_folder}"
+                    sshPut remote: itemServer, from: "${tmp_build_package}", into: "${deploy_folder}"
                 }
             }
             // parallel send folder each server
@@ -290,7 +291,7 @@ def deploySource(){
             for (item in list_server) {
                 def itemServer = item
                 copy_file_tasks["Cp file to main dir in ${itemServer.name}"] = {
-                    sshCommand remote: itemServer, command: "cp -rf ${deploy_folder}/${build_package}/* ${current_folder}"
+                    sshCommand remote: itemServer, command: "cp -rf ${deploy_folder}/${params.PROFILE}/* ${current_folder}"
                 }
             }        
             // parallel copy folder each server
