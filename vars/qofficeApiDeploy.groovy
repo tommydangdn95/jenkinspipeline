@@ -27,6 +27,21 @@ def call(){
                 choices: ['Build & Deploy', 'Build', 'Deploy',],
                 description: 'Type Deploy Job'
             )
+            booleanParam (
+                name: 'STATUS_DB',
+                defaultValue: false,
+                description: 'Status Database!'
+            )
+            booleanParam (
+                name: 'UPDATE_DB',
+                defaultValue: false,
+                description: 'Update Database!'
+            )
+            booleanParam (
+                name: 'DROP_DB',
+                defaultValue: false,
+                description: 'Drop All Database!'
+            )
             choice (
                 name: 'PROFILE',
                 choices: choiceEnv,
