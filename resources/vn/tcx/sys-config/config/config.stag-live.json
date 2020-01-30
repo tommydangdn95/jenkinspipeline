@@ -4,8 +4,7 @@
         "defaultBranch": "master",
     },
     "email": {
-        "cc": "dtranthuy1995@gmail.com",
-        "bcc": "jenkinscigg@gmail.com, cedricjgreen@my.smccd.edu"
+        "cc": "jenkinscigg@gmail.com"
     },
     "live": {
         "timeout": 120,

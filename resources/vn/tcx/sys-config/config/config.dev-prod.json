@@ -1,11 +1,10 @@
 {
     "jenkins-config": {
         "env": ["dev", "prod"],
-        "defaultBranch": "develop",
+        "defaultBranch": "develop"
     },
     "email": {
-        "cc": "dtranthuy1995@gmail.com",
-        "bcc": "jenkinscigg@gmail.com, cedricjgreen@my.smccd.edu"
+        "cc": "jenkinscigg@gmail.com"
     },
     "dev": {
         "timeout": 120,
