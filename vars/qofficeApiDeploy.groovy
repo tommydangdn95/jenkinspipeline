@@ -151,7 +151,7 @@ def buildSource(){
     def liquibaseCommand = "-Ddburl=${dburl} -Ddbuser=${username} -Ddbpass=${password}"
 
     // check if app env is stag live then using liquibase command
-    def extendLiquibaseCommand = (Parameters.instance.APP_ENV. == "stag-live") ? liquibaseCommand : ""
+    def extendLiquibaseCommand = (Parameters.instance.APP_ENV == "stag-live") ? liquibaseCommand : ""
 
     withEnv(["PATH+MAVEN=${tool name: 'Apache Maven 3.6.0', type: 'maven'}/bin"]) {
 
