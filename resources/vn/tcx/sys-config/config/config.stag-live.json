@@ -393,7 +393,7 @@
                 "deploy-folder-suffix": "api-phieuyeucau/phieuyeucau-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "phieuyeucau-1.0.0.war",
-                "slack-notify": "#deploy-api-phieuyeucau",
+                "slack-notify": "#deploy-api-phyeucau",
                 "port": "8087"
             },
             "phieu-de-xuat": {
@@ -404,7 +404,7 @@
                 "deploy-folder-suffix": "api-phieudexuat/phieudexuat-deploy",
                 "send-file-folder": "target",
                 "original-name-package": "phieudexuat-1.0.0.war",
-                "slack-notify": "#deploy-api-phieudexuat",
+                "slack-notify": "#deploy-api-phdexuat",
                 "port": "8088"
             },
             "migrated": {
