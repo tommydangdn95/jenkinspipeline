@@ -52,21 +52,4 @@ class Parameters {
 
     // set job name 
     public String JOB_NAME;
-
-    /****
-    -----------------------------------------------------
-    -----------------------------------------------------
-    Deprecated
-    -----------------------------------------------------
-    -----------------------------------------------------
-     ***/
-
-    // common name to get common config api. see in config.json
-    public String commonName;
-
-    // get server to deploy. see groups server in config.json
-    public String groupServers;
-
-    // get name of api ex: danh-muc, he-thong
-    public String jobName;
 }
