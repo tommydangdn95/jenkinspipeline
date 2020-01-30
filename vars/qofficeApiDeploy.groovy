@@ -136,7 +136,6 @@ def buildSource(){
 
     // read json file
     def CONFIG = readJsonConfigFile()
-    echo "${CONFIG}"
 
     def job_name = Parameters.instance.JOB_NAME
     def renamed_package = "${job_name}.war"
@@ -146,7 +145,6 @@ def buildSource(){
 
     // get git url
     def gitUrl = JOB_CONFIG["git-url"]
-    echo "${gitUrl}"
 
     // folder package build out
     def build_package = JOB_CONFIG["send-file-folder"]
@@ -154,21 +152,25 @@ def buildSource(){
     // origin package name
     def original_package = JOB_CONFIG["original-name-package"]
 
-    // get url db
-    def dburl = CONFIG["${params.PROFILE}"]["database"]["url"]
-
-    // get user name and pass
-    def username = JOB_CONFIG["user-db"]
-    def password = JOB_CONFIG["password-db"]
-
     // credential and gitURl
     def credentialsIdBbk = CONFIG["${params.PROFILE}"]["credentialsId"]
 
-    // command liquidbase
-    def liquibaseCommand = "-Ddburl=${dburl} -Ddbuser=${username} -Ddbpass=${password}"
+    def dburl = ""
+    def username = ""
+    def password = ""
+    def liquibaseCommand = ""
 
-    // check if app env is stag live then using liquibase command
-    def extendLiquibaseCommand = (Parameters.instance.APP_ENV == "stag-live") ? liquibaseCommand : ""
+    if(Parameters.instance.APP_ENV == "stag-live") {
+        // get url db
+        dburl = CONFIG["${params.PROFILE}"]["database"]["url"]
+
+        // get user name and pass
+        username = JOB_CONFIG["user-db"]
+        password = JOB_CONFIG["password-db"]
+
+        // command liquidbase
+        liquibaseCommand = "-Ddburl=${dburl} -Ddbuser=${username} -Ddbpass=${password}"
+    }
 
     withEnv(["PATH+MAVEN=${tool name: 'Apache Maven 3.6.0', type: 'maven'}/bin"]) {
 
@@ -202,7 +204,7 @@ def buildSource(){
                 stage('Show Status Database') {
                     if (params.STATUS_DB == true) {
                         FAILED_STAGE = "${STAGE_NAME}"
-                        sh "mvn liquibase:status -P${params.PROFILE} ${extendLiquibaseCommand}"
+                        sh "mvn liquibase:status -P${params.PROFILE} ${liquibaseCommand}"
                     }
                     else{
                         Utils.markStageSkippedForConditional("${STAGE_NAME}")
@@ -214,7 +216,7 @@ def buildSource(){
                 stage('Update Database') {
                     if (params.UPDATE_DB == true) {
                         FAILED_STAGE = "${STAGE_NAME}"
-                        sh "mvn liquibase:update -P${params.PROFILE}  ${extendLiquibaseCommand}"
+                        sh "mvn liquibase:update -P${params.PROFILE}  ${liquibaseCommand}"
                     }
                     else{
                         Utils.markStageSkippedForConditional("${STAGE_NAME}")
@@ -226,7 +228,7 @@ def buildSource(){
                 stage('Drop Database') {
                     if (params.DROP_DB == true) {
                         FAILED_STAGE = "${STAGE_NAME}"
-                        sh "mvn liquibase:dropAll -P${params.PROFILE} ${extendLiquibaseCommand}"
+                        sh "mvn liquibase:dropAll -P${params.PROFILE} ${liquibaseCommand}"
                     }
                     else{
                         Utils.markStageSkippedForConditional("${STAGE_NAME}")
