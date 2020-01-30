@@ -21,6 +21,9 @@ class Parameters {
     -----------------------------------------------------
      ***/
 
+    // path file config api java application
+    public String PATH_SYS_APPSETTING_API = "vn/tcx/application"
+
     // path file config file api
     public String PATH_SYS_APPSETTING_FILE_API = "vn/tcx/file-api/app"
 
@@ -49,6 +52,14 @@ class Parameters {
 
     // set job name 
     public String JOB_NAME;
+
+    /****
+    -----------------------------------------------------
+    -----------------------------------------------------
+    Deprecated
+    -----------------------------------------------------
+    -----------------------------------------------------
+     ***/
 
     // common name to get common config api. see in config.json
     public String commonName;
