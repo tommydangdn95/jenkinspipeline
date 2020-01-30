@@ -121,6 +121,7 @@ def buildSource(){
 
     // read json file
     def CONFIG = readJsonConfigFile()
+    echo "${CONFIG}"
 
     def job_name = Parameters.instance.JOB_NAME
     def renamed_package = "${job_name}.war"
@@ -130,6 +131,7 @@ def buildSource(){
 
     // get git url
     def gitUrl = JOB_CONFIG["git-url"]
+    echo "${gitUrl}"
 
     // folder package build out
     def build_package = JOB_CONFIG["send-file-folder"]
